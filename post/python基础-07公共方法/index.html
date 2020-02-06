@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Python基础-07公共方法&nbsp;&ndash;&nbsp;Nicole Chu</title><link rel="stylesheet" href="/css/core.min.8a6c763abd52ea4d1d5fed58960af1ca282e95c8607a0010e9237f9de64cee875b3967d32eaee86892232d1f4d08495d.css" integrity="sha384-imx2Or1S6k0dX&#43;1YlgrxyigulchgegAQ6SN/neZM7odbOWfTLq7oaJIjLR9NCEld"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Nicole Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Python基础-07公共方法</h1><p class="article date">Feb 02, 2020</p></section><article class="article markdown-body"><h1 id="1-python-内置函数">1. Python 内置函数</h1>
+<p>Python 包含了以下内置函数：
+<strong>注意</strong></p>
+<ul>
+<li><strong>字符串</strong> 比较符合以下规则： &ldquo;0&rdquo; &lt; &ldquo;A&rdquo; &lt; &ldquo;a&rdquo;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>len(item)</td>
+<td>计算容器中元素个数</td>
+<td></td>
+</tr>
+<tr>
+<td>del(item)</td>
+<td>删除变量</td>
+<td>del 有两种方式</td>
+</tr>
+<tr>
+<td>max(item)</td>
+<td>返回容器中元素最大值</td>
+<td>如果是字典，只针对 key 比较</td>
+</tr>
+<tr>
+<td>min(item)</td>
+<td>返回容器中元素最小值</td>
+<td>如果是字典，只针对 key 比较</td>
+</tr>
+<tr>
+<td>cmp(item1, item2)</td>
+<td>比较两个值，-1 小于/0 相等/1 大于</td>
+<td>Python 3.x 取消了 cmp 函数</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#&#34;1&#34; &lt; &#34;2&#34;</span>
+<span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">111</span><span class="s2">&#34;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">222</span><span class="s2">&#34;</span><span class="p">]</span>
+<span class="c1">#{&#34;a&#34;: &#34;z&#34;,&#34;b&#34;: &#34;y&#34;} &lt; {&#34;a&#34;: &#34;y&#34;,&#34;b&#34;: &#34;z&#34;}</span>
+</code></pre></div><pre><code>True
+</code></pre>
+<h1 id="2-切片">2. 切片</h1>
+<table>
+<thead>
+<tr>
+<th align="center">描述</th>
+<th align="center">Python 表达式</th>
+<th align="center">结果</th>
+<th align="center">支持的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">切片</td>
+<td align="center">&ldquo;0123456789&rdquo;[::-2]</td>
+<td align="center">&ldquo;97531&rdquo;</td>
+<td align="center">字符串、列表、元组</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>切片</strong> 使用 <strong>索引值</strong> 来限定范围，从一个大的 <strong>字符串</strong> 中 <strong>切出</strong> 小的 <strong>字符串</strong></li>
+<li><strong>列表</strong> 和 <strong>元组</strong> 都是 <strong>有序</strong> 的集合，都能够 <strong>通过索引值</strong> 获取到对应的数据</li>
+<li><strong>字典</strong> 是一个 <strong>无序</strong> 的集合，是使用 <strong>键值对</strong> 保存数据</li>
+</ul>
+<h1 id="3-运算符">3. 运算符</h1>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th>Python 表达式</th>
+<th>结果</th>
+<th>描述</th>
+<th>支持的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">+</td>
+<td>[1, 2] + [3, 4]</td>
+<td>[1, 2, 3, 4]</td>
+<td>合并</td>
+<td>字符串、列表、元组</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>[&ldquo;Hi!&quot;] * 4</td>
+<td>[&lsquo;Hi!', &lsquo;Hi!', &lsquo;Hi!', &lsquo;Hi!']</td>
+<td>重复</td>
+<td>字符串、列表、元组</td>
+</tr>
+<tr>
+<td align="center">in</td>
+<td>3 in (1, 2, 3)</td>
+<td>True</td>
+<td>元素是否存在</td>
+<td>字符串、列表、元组、字典</td>
+</tr>
+<tr>
+<td align="center">not in</td>
+<td>4 not in (1, 2, 3)</td>
+<td>True</td>
+<td>元素是否不存在</td>
+<td>字符串、列表、元组、字典</td>
+</tr>
+<tr>
+<td align="center">&gt; &gt;= == &lt; &lt;=</td>
+<td>(1, 2, 3) &lt; (2, 2, 3)</td>
+<td>True</td>
+<td>元素比较</td>
+<td>字符串、列表、元组</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意</strong></p>
+<ul>
+<li><code>in</code> 在对 <strong>字典</strong> 操作时，判断的是 <strong>字典的键</strong></li>
+<li><code>in</code> 和 <code>not in</code> 被称为 <strong>成员运算符</strong></li>
+</ul>
+<h4 id="成员运算符">成员运算符</h4>
+<p>成员运算符用于 <strong>测试</strong> 序列中是否包含指定的 <strong>成员</strong></p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>in</td>
+<td>如果在指定的序列中找到值返回 True，否则返回 False</td>
+<td><code>3 in (1, 2, 3)</code> 返回 <code>True</code></td>
+</tr>
+<tr>
+<td>not in</td>
+<td>如果在指定的序列中没有找到值返回 True，否则返回 False</td>
+<td><code>3 not in (1, 2, 3)</code> 返回 <code>False</code></td>
+</tr>
+</tbody>
+</table>
+<p>注意：在对 <strong>字典</strong> 操作时，判断的是 <strong>字典的键</strong></p>
+<h1 id="4-完整的-for-循环语法">4 完整的 for 循环语法</h1>
+<ul>
+<li>在 <code>Python</code> 中完整的 <code>for 循环</code> 的语法如下：</li>
+</ul>
+<p>for 变量 in 集合:</p>
+<pre><code>循环体代码
+</code></pre>
+<p>else:
+没有通过 break 退出循环，循环结束后，会执行的代码</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="p">:</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># 如果循环体内部使用break退出循环</span>
+    <span class="c1"># else下方的代码不会被执行</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">会执行吗？</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">循环结束</span><span class="s2">&#34;</span><span class="p">)</span>
+</code></pre></div><pre><code>1
+2
+循环结束
+</code></pre>
+<h4 id="应用场景">应用场景</h4>
+<ul>
+<li>在 <strong>迭代遍历</strong> 嵌套的数据类型时，例如 <strong>一个列表包含了多个字典</strong></li>
+<li>需求：要判断 某一个字典中 是否存在 指定的 值
+<ul>
+<li>如果 <strong>存在</strong>，提示并且退出循环</li>
+<li>如果 <strong>不存在</strong>，在 <strong>循环整体结束</strong> 后，希望 <strong>得到一个统一的提示</strong></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">students</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">name</span><span class="s2">&#34;</span><span class="p">:</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">阿土</span><span class="s2">&#34;</span><span class="p">}</span><span class="p">,</span>
+    <span class="p">{</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">name</span><span class="s2">&#34;</span><span class="p">:</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">小美</span><span class="s2">&#34;</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">find_name</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">zhang</span><span class="s2">&#34;</span>
+
+<span class="k">for</span> <span class="n">stu_dict</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="n">stu_dict</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">stu_dict</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">name</span><span class="s2">&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="n">find_name</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">找到了</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">find_name</span><span class="p">)</span>
+        <span class="k">break</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># 如果希望在搜索列表时，所有字典检查之后，都没有发现需要搜索的目标</span>
+    <span class="c1"># 还希望得到一个统一的提示</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">抱歉，没有找到</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">find_name</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">循环结束！</span><span class="s2">&#34;</span><span class="p">)</span>
+</code></pre></div><pre><code>{'name': '阿土'}
+{'name': '小美'}
+抱歉，没有找到zhang
+循环结束！
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+</code></pre></div></article><section class="article labels"><a class="category" href=/categories/python/>Python</a><a class="category" href=/categories/study/>study</a><a class="tag" href=/tags/python/>Python</a></section><section class="article navigation"><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-06%E9%AB%98%E7%BA%A7%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/"><span class="li">&larr;</span>Python基础-06高级变量类型</a></p><p><a class="link" href="/post/win10&#43;ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"><span class="li">&rarr;</span>Win10+Ubuntu双系统安装</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

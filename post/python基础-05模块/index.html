@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Python基础-05模块&nbsp;&ndash;&nbsp;Nicole Chu</title><link rel="stylesheet" href="/css/core.min.8a6c763abd52ea4d1d5fed58960af1ca282e95c8607a0010e9237f9de64cee875b3967d32eaee86892232d1f4d08495d.css" integrity="sha384-imx2Or1S6k0dX&#43;1YlgrxyigulchgegAQ6SN/neZM7odbOWfTLq7oaJIjLR9NCEld"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Nicole Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Python基础-05模块</h1><p class="article date">Feb 02, 2020</p></section><article class="article markdown-body"><h1 id="1-模块">1. 模块</h1>
+<ul>
+<li>模块好比是一个工具包，需要导入<code>import</code>这个模块</li>
+<li>每一个以扩展名<code>py</code>结尾的<code>python</code>源代码文件都是一个模块</li>
+<li>在模块中定义的<strong>全局变量、函数</strong>都是模块能够提供给外界使用的工具</li>
+</ul>
+<blockquote>
+<p><strong>模块是python程序架构的一个核心概念</strong></p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 模块  cw_10_module</span>
+<span class="c1"># 注意：模块名也是一个标识符</span>
+
+
+<span class="k">def</span> <span class="nf">print_line</span><span class="p">(</span><span class="n">char</span><span class="p">,</span><span class="n">times</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">char</span> <span class="o">*</span> <span class="n">times</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">print_lines</span><span class="p">(</span><span class="n">char</span><span class="p">,</span><span class="n">num</span><span class="p">)</span><span class="p">:</span>
+     <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2">
+</span><span class="s2"></span><span class="s2">     打印多行分割线</span><span class="s2">
+</span><span class="s2"></span><span class="s2">     :param char:字符</span><span class="s2">
+</span><span class="s2"></span><span class="s2">     :param num:次数</span><span class="s2">
+</span><span class="s2"></span><span class="s2">     :return:</span><span class="s2">
+</span><span class="s2"></span><span class="s2">     </span><span class="s2">&#34;&#34;&#34;</span>
+     <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span>
+
+     <span class="k">while</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+
+         <span class="n">print_line</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+         <span class="n">row</span> <span class="o">+</span><span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">name</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">楚天阔</span><span class="s2">&#34;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 导入模块</span>
+<span class="kn">import</span> <span class="nn">cw_10_module</span>
+
+<span class="n">cw_10_module</span><span class="o">.</span><span class="n">print_line</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">-</span><span class="s2">&#34;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cw_10_module</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div><h3 id="pyc文件">.pyc文件</h3>
+<ul>
+<li>c 是compile编译过的意思<br>
+<strong>操作步骤</strong></li>
+<li>浏览程序目录会发现一个_pycache_的目录</li>
+<li>目录下的cw_10_module.cpython-36.pyc文件，cpython-36表示python解释器的版本</li>
+<li>这个pyc文件是由python解释器将 <strong>模块的源码</strong> 转换成 <strong>字节码</strong></li>
+<li>python这样保存字节码是作为一种启动速度的优化</li>
+</ul>
+<h3 id="字节码">字节码</h3>
+<ul>
+<li>python解释源程序分为两个步骤
+<ol>
+<li>首先处理源代码，编译生成一个二进制的 字节码</li>
+</ol>
+<ul>
+<li>对字节码进行处理，才会生成cpu能够识别的机器码</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+</code></pre></div></article><section class="article labels"><a class="category" href=/categories/python/>Python</a><a class="category" href=/categories/study/>study</a><a class="tag" href=/tags/python/>Python</a></section><section class="article navigation"><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-04%E5%87%BD%E6%95%B0/"><span class="li">&larr;</span>Python基础-04函数</a></p><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-06%E9%AB%98%E7%BA%A7%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/"><span class="li">&rarr;</span>Python基础-06高级变量类型</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

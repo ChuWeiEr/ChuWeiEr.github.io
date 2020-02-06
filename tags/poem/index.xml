@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Poem on Nicole Chu</title>
+    <link>/tags/poem/</link>
+    <description>Recent content in Poem on Nicole Chu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>©2020 Notepadium.</copyright>
+    <lastBuildDate>Fri, 31 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/poem/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>滕王阁序-王勃(唐代) </title>
+      <link>/post/%E6%BB%95%E7%8E%8B%E9%98%81%E5%BA%8F/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/%E6%BB%95%E7%8E%8B%E9%98%81%E5%BA%8F/</guid>
+      <description>&lt;p&gt;原文&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>赤壁赋</title>
+      <link>/post/%E8%B5%A4%E5%A3%81%E8%B5%8B/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/%E8%B5%A4%E5%A3%81%E8%B5%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>从秦始皇到汉武帝-纪录片</title>
+      <link>/post/%E4%BB%8E%E7%A7%A6%E5%A7%8B%E7%9A%87%E5%88%B0%E6%B1%89%E6%AD%A6%E5%B8%9D/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/%E4%BB%8E%E7%A7%A6%E5%A7%8B%E7%9A%87%E5%88%B0%E6%B1%89%E6%AD%A6%E5%B8%9D/</guid>
+      <description>&lt;p&gt;笔记&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

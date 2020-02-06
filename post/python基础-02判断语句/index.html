@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Python基础-02判断语句&nbsp;&ndash;&nbsp;Nicole Chu</title><link rel="stylesheet" href="/css/core.min.8a6c763abd52ea4d1d5fed58960af1ca282e95c8607a0010e9237f9de64cee875b3967d32eaee86892232d1f4d08495d.css" integrity="sha384-imx2Or1S6k0dX&#43;1YlgrxyigulchgegAQ6SN/neZM7odbOWfTLq7oaJIjLR9NCEld"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Nicole Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Python基础-02判断语句</h1></section><article class="article markdown-body"><h2 id="1-判断语句">1. 判断语句</h2>
+<h3 id="11-ifelse">1.1 if/else</h3>
+<p>基本语法</p>
+<pre><code>if 要判断的条件：
+    条件成立时，要做的事情
+else:
+    条件不成立时，要做的事情
+</code></pre><ul>
+<li>代码缩进为4个空格</li>
+<li>将<code>if</code>和<code>else</code>共同缩进的代码看成一个代码块</li>
+<li>根据左侧箭头可以看到代码是否在代码块内部，根据光标也可以显示</li>
+</ul>
+<h3 id="12-ifelif">1.2 if/elif</h3>
+<ul>
+<li>同时判断多个条件，所有条件之间是平级的</li>
+<li>基本语法</li>
+</ul>
+<pre><code>if 条件1：
+    条件1满足时，执行的代码
+   ……
+elif 条件2：
+    条件2满足时，执行的代码
+elif 条件3：
+    条件3满足时，执行的代码
+……
+else：
+    条件都不满足时，执行的代码 
+</code></pre><h2 id="13-if的嵌套">1.3 if的嵌套</h2>
+<ul>
+<li>判断的条件之间有前后关系</li>
+<li>基本语法</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="err">条</span><span class="err">件</span><span class="mi">1</span><span class="err">：</span>  
+    <span class="err">条</span><span class="err">件</span><span class="mi">1</span><span class="err">满</span><span class="err">足</span><span class="err">时</span><span class="err">，</span><span class="err">执</span><span class="err">行</span><span class="err">的</span><span class="err">代</span><span class="err">码</span>  
+    <span class="err">…</span><span class="err">…</span>  
+    <span class="k">if</span> <span class="err">条</span><span class="err">件</span><span class="mi">1</span><span class="err">基</span><span class="err">础</span><span class="err">上</span><span class="err">的</span><span class="err">条</span><span class="err">件</span><span class="mi">2</span><span class="err">：</span>  
+        <span class="err">条</span><span class="err">件</span><span class="err">满</span><span class="err">足</span><span class="err">时</span><span class="err">，</span><span class="err">执</span><span class="err">行</span><span class="err">的</span><span class="err">代</span><span class="err">码</span>  
+        <span class="err">…</span><span class="err">…</span>
+    <span class="k">else</span><span class="err">：</span>  
+        <span class="err">条</span><span class="err">件</span><span class="err">不</span><span class="err">满</span><span class="err">足</span><span class="err">时</span><span class="err">，</span><span class="err">执</span><span class="err">行</span><span class="err">的</span><span class="err">代</span><span class="err">码</span>  
+        
+<span class="k">else</span><span class="err">：</span> 
+    <span class="err">条</span><span class="err">件</span><span class="mi">1</span><span class="err">不</span><span class="err">满</span><span class="err">足</span><span class="err">时</span><span class="err">，</span><span class="err">执</span><span class="err">行</span><span class="err">的</span><span class="err">代</span><span class="err">码</span>  
+    <span class="err">…</span><span class="err">…</span>  
+</code></pre></div><h2 id="2运算符">2.运算符</h2>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">==</td>
+<td align="center">检查两个操作的数是否相等，相等返回True</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-逻辑运算">3. 逻辑运算</h2>
+<ul>
+<li>and</li>
+<li>or</li>
+<li>not</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">age</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2">
+</span><span class="s2"></span><span class="s2">编写代码思路，分析要求</span><span class="s2">
+</span><span class="s2"></span><span class="s2">age &gt;= 0 and age &lt;= 120</span><span class="s2">
+</span><span class="s2"></span><span class="s2">&#34;&#34;&#34;</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span><span class="o">=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&lt;</span><span class="o">=</span> <span class="mi">120</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">The age is True</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">The age is False</span><span class="s2">&#34;</span><span class="p">)</span>
+</code></pre></div><pre><code>The age is True
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">is_employee</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">is_employee</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">非本公司人员，请勿入内</span><span class="s2">&#34;</span><span class="p">)</span>
+</code></pre></div><h2 id="4-石头剪刀布">4. 石头、剪刀、布</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 石头、剪刀、布</span>
+<span class="c1"># 编程思路，先完整后分支</span>
+<span class="c1"># 导入随机工具包</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="c1"># 从控制台输入要输入的拳-rock(1)/scissor(2)/paper(3)</span>
+<span class="n">player</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">请输入您要输入的拳头rock(1)/scissor(2)/paper(3)： </span><span class="s2">&#34;</span><span class="p">)</span><span class="p">)</span>
+<span class="c1"># 电脑随机出拳</span>
+<span class="n">computer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">玩家选择的拳头是</span><span class="si">%d</span><span class="s2">,电脑出的拳头是</span><span class="si">%d</span><span class="s2">&#34;</span><span class="o">%</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="n">computer</span><span class="p">)</span><span class="p">)</span>
+<span class="c1"># 比较胜负</span>
+<span class="c1"># 胜利的条件</span>
+<span class="c1"># 1 石头 胜 剪刀</span>
+<span class="c1"># 2 剪刀 胜 布</span>
+<span class="c1"># 3 布 胜 石头</span>
+<span class="c1"># if (player == 1 and computer == 2) or (player == 2 and computer == 3 ) or (player == 3 and computer == 1):</span>
+<span class="c1"># 调整代码格式</span>
+<span class="c1"># 将很长的代码调整为换行，换行之后为了避免与判断混淆，用tab加向右缩进</span>
+<span class="k">if</span> <span class="p">(</span><span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="ow">or</span> <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="ow">or</span> <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">oh yeah!you win!</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="c1"># 平均</span>
+<span class="k">elif</span> <span class="n">player</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">You both think the same</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">you can fight again</span><span class="s2">&#34;</span><span class="p">)</span>
+</code></pre></div></article><section class="article labels"><a class="category" href=/categories/python/>Python</a><a class="category" href=/categories/study/>study</a><a class="tag" href=/tags/python/>Python</a></section><section class="article navigation"><p><a class="link" href="/post/%E8%B5%A4%E5%A3%81%E8%B5%8B/"><span class="li">&larr;</span>赤壁赋</a></p><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-03%E5%BE%AA%E7%8E%AF/"><span class="li">&rarr;</span>Python基础-03循环</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>
