@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Python模块学习-03Matplotlib-03&nbsp;&ndash;&nbsp;Nicole Chu</title><link rel="stylesheet" href="/css/core.min.8a6c763abd52ea4d1d5fed58960af1ca282e95c8607a0010e9237f9de64cee875b3967d32eaee86892232d1f4d08495d.css" integrity="sha384-imx2Or1S6k0dX&#43;1YlgrxyigulchgegAQ6SN/neZM7odbOWfTLq7oaJIjLR9NCEld"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Nicole Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Python模块学习-03Matplotlib-03</h1><p class="article date">Feb 11, 2020</p></section><article class="article markdown-body"><h2 id="1axes画子图--以下两例都是对象操作">1、axes画子图&ndash;以下两例都是对象操作</h2>
+<ul>
+<li>
+<p>figure\axes\subplot\axis 关系和区别</p>
+</li>
+<li>
+<p>axes的用法和subplot是差不多的，四个参数</p>
+</li>
+<li>
+<p>前两个指的是相对于坐标原点的位置，后两个指的是坐标轴的长/宽度，</p>
+</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="c1"># 1.创建一个画板</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="p">)</span>
+<span class="c1"># 2.创建了一个轴</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="c1"># 3.所以就算只有一个子图，也可以生成一个subplot</span>
+<span class="c1"># 然后对这个subplot对象进行各种轴、标注、刻度等的设定</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">4.5</span><span class="p">]</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">An example of axes</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">x-axis</span><span class="s2">&#34;</span><span class="p">,</span>
+       <span class="n">ylabel</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">y-axis</span><span class="s2">&#34;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><pre><code>&lt;Figure size 640x480 with 0 Axes&gt;
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">,</span> <span class="n">polar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ax1</span><span class="p">)</span><span class="p">)</span>
+
+<span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="p">)</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig2</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]</span><span class="p">)</span>
+<span class="n">ax4</span> <span class="o">=</span> <span class="n">fig2</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ax3</span><span class="p">)</span><span class="p">)</span>
+
+<span class="n">fig3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="p">)</span>
+<span class="n">ax11</span> <span class="o">=</span> <span class="n">fig3</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span><span class="p">)</span>
+<span class="n">ax22</span> <span class="o">=</span> <span class="n">fig3</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="p">[</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]</span><span class="p">)</span>
+<span class="n">ax33</span> <span class="o">=</span> <span class="n">fig3</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]</span><span class="p">)</span>
+<span class="n">ax44</span> <span class="o">=</span> <span class="n">fig3</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="p">[</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><pre><code>&lt;class 'matplotlib.axes._subplots.PolarAxesSubplot'&gt;
+&lt;class 'matplotlib.axes._axes.Axes'&gt;
+</code></pre>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="output_5_1.png"><img  src="output_5_1.png"
+        alt="png"/></a></p>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="output_5_2.png"><img  src="output_5_2.png"
+        alt="png"/></a></p>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="output_5_3.png"><img  src="output_5_3.png"
+        alt="png"/></a></p>
+<h2 id="2-axes方法与pyplot函数">2. Axes方法与pyplot函数</h2>
+<h4 id="第一种方法-函数">第一种方法-函数</h4>
+<ul>
+<li>调用了pyplot中的plot（）函数和xlim（）函数</li>
+</ul>
+<h4 id="第二种方法-对象">第二种方法-对象</h4>
+<ul>
+<li>使用了生成的subplot对象的两种方法：.plot和.set_xlim方法</li>
+</ul>
+<blockquote>
+<p>实际上，这也是贯穿整个python编程的两种思路，函数式编程和对象式编程</p>
+</blockquote>
+<ul>
+<li>以plot()为代表的的函数式操作，表达简洁，但是没有体现出真正画图的实现过程，例如甚至当没有搞清楚Figure、Axes、Subplot等概念的时候，依然可以轻松地用pyplot函数画图，当子图较多的时候，对子图的操作容易混乱。</li>
+<li>以.plot为代表的的对象式操作，表达明确，分步写成Figure和Axes、subplot，操作过程可以看出是在哪张子图上操作，缺点是，需要写的代码较多，不够简洁。</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># *-* coding:utf8 *-*</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="c1">#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">#ffff00</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
+
+<span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig2</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">#00ffff</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+
+</code></pre></div><p><a target="_blank" rel="noopener noreferrer" 
+  href="output_8_0.png"><img  src="output_8_0.png"
+        alt="png"/></a></p>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="output_8_1.png"><img  src="output_8_1.png"
+        alt="png"/></a></p>
+<h2 id="3-等值线图">3. 等值线图</h2>
+<ul>
+<li>contour</li>
+<li>contourf():带填充效果的等值线!</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># *-* coding:utf8 *-*</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="o">*</span><span class="mi">5</span><span class="o">+</span><span class="n">y</span><span class="o">*</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="c1"># 理解meshgrid的工作机制</span>
+<span class="c1"># Y2, X2 = np.meshgrid(y,x)</span>
+<span class="c1"># print(&#34;x = &#34;, x)</span>
+<span class="c1"># print(&#34;y = &#34;, y)</span>
+<span class="c1"># print(&#34;X = &#34;, X)</span>
+<span class="c1"># print(&#34;Y = &#34;, Y)</span>
+<span class="c1"># print(&#34;X2 = &#34;, X2)</span>
+<span class="c1"># print(&#34;Y2 = &#34;, Y2)</span>
+
+<span class="c1"># axes的用法和subplot是差不多的，四个参数</span>
+<span class="c1"># 前两个指的是相对于坐标原点的位置，后两个指的是坐标轴的长/宽度，</span>
+<span class="c1"># 可以看看这个：https://www.zhihu.com/question/51745620</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greens</span><span class="p">)</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">black</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><h3 id="隐函数的等值线图">隐函数的等值线图</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># *-* coding:utf8 *-*</span>
+<span class="c1"># 使用等值线绘制隐函数曲线</span>
+<span class="c1"># 可以使用等值线解决这个问题，</span>
+<span class="c1"># 显然隐函数的曲线就是值等于0的那条等值线。</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[</span><span class="o">-</span><span class="mf">1.5</span><span class="p">:</span><span class="mf">1.5</span><span class="p">:</span><span class="mi">200j</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">:</span><span class="mf">1.5</span><span class="p">:</span><span class="mi">200j</span><span class="p">]</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="o">*</span><span class="mi">4</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="n">y</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="p">]</span>
+<span class="c1"># 在调用contour()绘制等值线时，可</span>
+<span class="c1"># 以通过levels参数指定所绘制等值线对应的函数值，</span>
+<span class="c1"># 这里设置levels参数为[0，0.1],因此最终将绘制两条等值线。</span>
+<span class="n">cs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span><span class="p">,</span>
+                 <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">b</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">r</span><span class="s2">&#34;</span><span class="p">]</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">solid</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">dashed</span><span class="s2">&#34;</span><span class="p">]</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="c1"># cs对象的collections属性是一个等值线列表，</span>
+<span class="c1"># 每条等值线用一个LineCollection对象表示：</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cs</span><span class="o">.</span><span class="n">collections</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get_paths</span><span class="p">(</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">vertices</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="p">,</span>
+             <span class="n">color</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">get_color</span><span class="p">(</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">get_linewidth</span><span class="p">(</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div></article><section class="article labels"><a class="category" href=/categories/python%E6%A8%A1%E5%9D%97/>Python模块</a><a class="category" href=/categories/study/>study</a><a class="tag" href=/tags/matplotlib/>Matplotlib</a><a class="tag" href=/tags/%E7%BB%98%E5%9B%BE%E5%87%BD%E6%95%B0/>绘图函数</a></section><section class="article navigation"><p><a class="link" href="/post/python%E6%A8%A1%E5%9D%97%E5%AD%A6%E4%B9%A0-03matplotlib-01/"><span class="li">&rarr;</span>Python模块学习-03Matplotlib-01</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

@@ -7,26 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 Notepadium.</copyright>
-    <lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Feb 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Python</title>
-      <link>/categories/python/</link>
-      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      <title>Python模块</title>
+      <link>/categories/python%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/python/</guid>
+      <guid>/categories/python%E6%A8%A1%E5%9D%97/</guid>
       <description></description>
     </item>
     
     <item>
       <title>study</title>
       <link>/categories/study/</link>
-      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/study/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础</title>
+      <link>/categories/python%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/python%E5%9F%BA%E7%A1%80/</guid>
       <description></description>
     </item>
     
@@ -54,6 +63,15 @@
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/literature/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/categories/python/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/python/</guid>
       <description></description>
     </item>
     

@@ -7,55 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 Notepadium.</copyright>
-    <lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jan 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Python基础-04函数</title>
-      <link>/post/python%E5%9F%BA%E7%A1%80-04%E5%87%BD%E6%95%B0/</link>
-      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/python%E5%9F%BA%E7%A1%80-04%E5%87%BD%E6%95%B0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python基础-05模块</title>
-      <link>/post/python%E5%9F%BA%E7%A1%80-05%E6%A8%A1%E5%9D%97/</link>
-      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/python%E5%9F%BA%E7%A1%80-05%E6%A8%A1%E5%9D%97/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python基础-06高级变量类型</title>
-      <link>/post/python%E5%9F%BA%E7%A1%80-06%E9%AB%98%E7%BA%A7%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</link>
-      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/python%E5%9F%BA%E7%A1%80-06%E9%AB%98%E7%BA%A7%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python基础-07公共方法</title>
-      <link>/post/python%E5%9F%BA%E7%A1%80-07%E5%85%AC%E5%85%B1%E6%96%B9%E6%B3%95/</link>
-      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/python%E5%9F%BA%E7%A1%80-07%E5%85%AC%E5%85%B1%E6%96%B9%E6%B3%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python基础-01变量</title>
-      <link>/post/python%E5%9F%BA%E7%A1%80-01%E5%8F%98%E9%87%8F/</link>
-      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/python%E5%9F%BA%E7%A1%80-01%E5%8F%98%E9%87%8F/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Python简介与Pycharm</title>
@@ -63,24 +18,6 @@
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/python%E7%AE%80%E4%BB%8B%E4%B8%8Epycharm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python基础-02判断语句</title>
-      <link>/post/python%E5%9F%BA%E7%A1%80-02%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/python%E5%9F%BA%E7%A1%80-02%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python基础-03循环</title>
-      <link>/post/python%E5%9F%BA%E7%A1%80-03%E5%BE%AA%E7%8E%AF/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/python%E5%9F%BA%E7%A1%80-03%E5%BE%AA%E7%8E%AF/</guid>
       <description></description>
     </item>
     

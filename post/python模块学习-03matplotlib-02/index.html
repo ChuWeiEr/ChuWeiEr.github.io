@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Python模块学习-03Matplotlib-02&nbsp;&ndash;&nbsp;Nicole Chu</title><link rel="stylesheet" href="/css/core.min.8a6c763abd52ea4d1d5fed58960af1ca282e95c8607a0010e9237f9de64cee875b3967d32eaee86892232d1f4d08495d.css" integrity="sha384-imx2Or1S6k0dX&#43;1YlgrxyigulchgegAQ6SN/neZM7odbOWfTLq7oaJIjLR9NCEld"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Nicole Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Python模块学习-03Matplotlib-02</h1><p class="article date">Feb 10, 2020</p></section><article class="article markdown-body"><h2 id="1-对数坐标轴--pltsemilogx">1. 对数坐标轴  plt.semilogx()</h2>
+<p>绘制对数坐标图的函数有三个</p>
+<ul>
+<li>plt.semilogx()  X轴为对数坐标</li>
+<li>plt.semilogy()  Y轴为对数坐标</li>
+<li>plt.loglog()  两个轴都为对数坐标</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># *-* coding:utf8 *-*</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.1j</span><span class="o">*</span><span class="n">w</span><span class="p">)</span><span class="p">)</span> <span class="c1"># 计算低通滤波器的频率响应</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">223</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">224</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><h2 id="2-极坐标图-pltpolar">2. 极坐标图 plt.polar()</h2>
+<ul>
+<li>
+<p>plt.polar()</p>
+</li>
+<li>
+<p>plt.subplot(polar=True)</p>
+</li>
+<li>
+<p>程序中调用subplot()创建子图时通过设 polar参数为True,创建一个极坐标子图。</p>
+</li>
+<li>
+<p>然后调用plot()在极坐标子图中绘图。</p>
+</li>
+<li>
+<p>也可以使用polar()直接创建极坐标子图并在其中绘制曲线</p>
+</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># *-* coding:utf8 *-*</span>
+<span class="c1"># 极坐标系中的点由一个夹角和一段相对中心点的距离来表示</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">)</span>
+<span class="c1"># plt.figure(1)的作用是创建一个绘图纸</span>
+<span class="c1"># 需要一个新的绘图纸就在代码上面加一句</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 把创建的绘图纸用subplot分成几块</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span><span class="n">polar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1"># 用plot在分好的那块上面画图</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="mf">1.6</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">theta</span><span class="p">,</span> <span class="n">theta</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">--</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 子图2</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">polar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="mf">1.4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">--</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="mf">1.8</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># rgrids()设置同心圆栅格的半径大小和文字标注的角度</span>
+<span class="c1"># 因此图中的虚线圆圈有三个，</span>
+<span class="c1"># 半径分别为0.5、1.0和1.5,这些文字沿着45°线排列</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rgrids</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="c1"># Thetagrids()设置放射线栅格的角度</span>
+<span class="c1"># 因此图中只有两条放射线，角度分别为0°和45°。 </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">thetagrids</span><span class="p">(</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">45</span><span class="p">]</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">polar.png</span><span class="s2">&#34;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">polar</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><h2 id="3-柱状图--pltbar">3. 柱状图  plt.bar()</h2>
+<ul>
+<li>第一个参数为每根柱子左边缘的横坐标，</li>
+<li>第二个参数为每根柱子的高度，</li>
+<li>第三个参数指定所有柱子的宽度。</li>
+<li>当第三个参数为序列时，可以为每根柱子指定宽度。</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># *-* coding:utf8 *-*</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="c1"># 生成一个文件</span>
+<span class="c1"># 第一列年龄；第二列男性人数；第三列女性人数</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">china_population.txt</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="si">%d</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2"> </span><span class="s2">&#34;</span><span class="p">)</span>
+
+<span class="c1"># 读入文件的参数 dtype=float,</span>
+<span class="n">bar_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">china_population.txt</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2"> </span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">width</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="p">)</span><span class="o">*</span><span class="mf">0.4</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="p">)</span>
+<span class="c1"># Bar()的</span>
+<span class="c1"># #第一个参数为每根柱子左边缘的横坐标，</span>
+<span class="c1"># 第二个参数为每根柱子的高度，</span>
+<span class="c1"># 第三个参数指定所有柱子的宽度。</span>
+<span class="c1"># 当第三个参数为序列时，可以为每根柱子指定宽度。</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="p">,</span><span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">lightblue</span><span class="s2">&#34;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">man</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span> <span class="n">width</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">red</span><span class="s2">&#34;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">woman</span><span class="s2">&#34;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">number</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">black</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">o</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">green</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">normal_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">normal_dat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="c1"># y1放在上面，y2放在下面</span>
+<span class="c1"># #显示颜色facecolor,边缘颜色：edgecolor</span>
+<span class="c1"># 添加柱状图数字，ha显示在柱状图上的位置,va:数字显示在柱状图上面，还是下面。</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">normal_x</span><span class="p">,</span> <span class="n">normal_dat</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">red</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">white</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">normal_x</span><span class="p">,</span> <span class="o">-</span><span class="n">normal_dat</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">blue</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">white</span><span class="s2">&#34;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">normal_x</span><span class="p">,</span> <span class="n">normal_dat</span><span class="p">)</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="si">%.2f</span><span class="s2">&#34;</span> <span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">center</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">bottom</span><span class="s2">&#34;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">normal_x</span><span class="p">,</span> <span class="o">-</span><span class="n">normal_dat</span><span class="p">)</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="si">%.2f</span><span class="s2">&#34;</span> <span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">center</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">top</span><span class="s2">&#34;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><h2 id="4-散点图-pltscatter">4. 散点图 plt.scatter()</h2>
+<ul>
+<li>使用plot()绘图时，如果指定样式参数为仅绘制数据点，那么所绘制的就是一幅散列图。但是这种方法所绘制的点无法单独指定颜色和大小。</li>
+<li>而scatter()所绘制的散列图却可以指定每个点的颜色和大小。</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">o</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><h2 id="5-图像-pltimread">5. 图像 plt.imread()</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="kn">as</span> <span class="nn">cm</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">color.png</span><span class="s2">&#34;</span><span class="p">)</span>
+
+<span class="c1"># 可以从图像文件读入数据，得到一个表示图像的NumPy数组。</span>
+<span class="c1"># 它的第一个参数是文件名或文件对象，</span>
+<span class="c1"># format参数指定图像类型，如果省略，就由文件的扩展名决定图像类型。</span>
+<span class="c1"># 对于灰度图像，它返回一个形状为(M，N)的数组；</span>
+<span class="c1"># 对于彩色图像，返回形状为(M，N，C)的数组。</span>
+<span class="c1"># 其中, M为图像的高度, N为图像的宽度, C为3或4, 表示图像的通道数。</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">img.shape = </span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">img.dtype = </span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</code></pre></div><h2 id="6-图像-pltimshow">6. 图像 plt.imshow()</h2>
+<ul>
+<li>plt.imshow(z, extent=extent, cmap=cm.seismic, origin=&quot;lower&rdquo;)</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># *-* coding:utf8 *-*</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="kn">as</span> <span class="nn">cm</span>
+
+<span class="c1"># ogrid返回的是一组可以用来广播计算的数组</span>
+<span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">200j</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">200j</span><span class="p">]</span>
+<span class="c1"># 通过数组的广播功能计算出表示函数值的二维数组Z,</span>
+<span class="c1"># 注意它的第0轴表示Y轴、 第1轴表示X轴。</span>
+<span class="c1"># 然后将X、Y轴的取值范围保存到extent列表中。</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">x = </span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">y = </span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">z = </span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="p">]</span>
+<span class="c1"># 将extent列表传递给 imshow()的extent参数，</span>
+<span class="c1"># 这样一来，图表的X、Y轴的刻度标签将使用extent列表所指定的范围.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">lower</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">Set1</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">lower</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">223</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">seismic</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">lower</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+
+</code></pre></div><h2 id="7-饼图--pltpie">7. 饼图  plt.pie()</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># *-* coding:utf8 *-*</span>
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">pie</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># *-* coding:utf8 *-*</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">Z</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span><span class="o">=</span> <span class="mi">2</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="p">[</span><span class="mf">0.025</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">]</span><span class="p">)</span>
+<span class="c1"># explode:每个扇形离中心的距离;</span>
+<span class="c1"># colors:设置颜色(每一个都有不同的颜色)这里用的灰度颜色;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">explode</span><span class="o">=</span><span class="n">Z</span><span class="o">*</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="p">]</span> <span class="p">)</span>
+<span class="c1"># 让他生成一个正圆不是椭圆</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(</span><span class="p">)</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">equal</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="p">[</span><span class="p">]</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="p">[</span><span class="p">]</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+
+</code></pre></div></article><section class="article labels"><a class="category" href=/categories/python%E6%A8%A1%E5%9D%97/>Python模块</a><a class="category" href=/categories/study/>study</a><a class="tag" href=/tags/matplotlib/>Matplotlib</a></section><section class="article navigation"><p><a class="link" href="/post/python%E6%A8%A1%E5%9D%97%E5%AD%A6%E4%B9%A0-03matplotlib-01/"><span class="li">&larr;</span>Python模块学习-03Matplotlib-01</a></p><p><a class="link" href="/post/python%E6%A8%A1%E5%9D%97%E5%AD%A6%E4%B9%A0-03matplotlib-04/"><span class="li">&rarr;</span>Python模块学习-03Matplotlib-04</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>
