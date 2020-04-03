@@ -7,17 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 Notepadium.</copyright>
-    <lastBuildDate>Sat, 07 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>编辑器-jupyter notebook</title>
+      <link>/post/%E7%BC%96%E8%BE%91%E5%99%A8-01jupyternotebook%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/%E7%BC%96%E8%BE%91%E5%99%A8-01jupyternotebook%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>PlateFlex安装</title>
-      <link>/post/plateflex%E5%AE%89%E8%A3%85/</link>
+      <link>/post/python%E6%A8%A1%E5%9D%97-plateflex%E5%AE%89%E8%A3%85/</link>
       <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/plateflex%E5%AE%89%E8%A3%85/</guid>
+      <guid>/post/python%E6%A8%A1%E5%9D%97-plateflex%E5%AE%89%E8%A3%85/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>编辑器-Pycharm</title>
+      <link>/post/%E7%BC%96%E8%BE%91%E5%99%A8-02pycharm%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/%E7%BC%96%E8%BE%91%E5%99%A8-02pycharm%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
     </item>
     

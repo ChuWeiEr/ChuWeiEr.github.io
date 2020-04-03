@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 Notepadium.</copyright>
-    <lastBuildDate>Tue, 11 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/categories/python%E6%A8%A1%E5%9D%97/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PlateFlex安装</title>
+      <link>/post/python%E6%A8%A1%E5%9D%97-plateflex%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E6%A8%A1%E5%9D%97-plateflex%E5%AE%89%E8%A3%85/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Python模块学习-03Matplotlib-03</title>
