@@ -5,8 +5,8 @@
     <div class="base-body"><section id="header" class="site header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Nicole Chu</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
-    <h1 class="article title">Win10+Ubuntu双系统安装</h1><p class="article date">Feb 01, 2020</p></section><article class="article markdown-body"><p>在已有Win10系统的情况下，安装Ubuntu18.04双系统</p>
-<p>作为小白，看了很多教程<br>
+    <h1 class="article title">Win10+Ubuntu双系统安装</h1><p class="article date">Jan 28, 2020</p></section><article class="article markdown-body"><p>在已有Win10系统的情况下，安装Ubuntu18.04双系统<br>
+作为小白，看了很多教程<br>
 包括自己对系统分区，注意选择启动盘等等，结果装完后总是有各种问题<br>
 最后选择只分一个根目录 / ，启动盘默认，结果安装成功！<br>
 推荐B站<a href="https://www.bilibili.com/video/av76023128?p=1"target="_blank">程序员小杨同学</a>
@@ -30,7 +30,7 @@
 <p>首先电脑关机，插入U盘<br>
 可以先查看一下电脑对应的U盘启动快捷键<br>
 <a target="_blank" rel="noopener noreferrer" 
-  href="https://github.com/ChuWeiEr/Luminary/raw/master/BlogPicture/bios%E5%BF%AB%E6%8D%B7%E9%94%AE.png"><img  src="https://github.com/ChuWeiEr/Luminary/raw/master/BlogPicture/bios%E5%BF%AB%E6%8D%B7%E9%94%AE.png"
+  href="https://github.com/ChuWeiEr/Luminary/raw/master/BlogPicture/bios%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E9%94%AE.jpeg"><img  src="https://github.com/ChuWeiEr/Luminary/raw/master/BlogPicture/bios%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E9%94%AE.jpeg"
         alt/></a><br>
 我使用的是dell，启动电脑，不停地按F12<br>
 选择legacy boot &ndash;&gt; USB Storage Device，回车<br>
@@ -39,10 +39,10 @@
 接下来进入到磁盘分区界面<br>
 win10的系统一般后面带有ntfs，所以不要动这部分，否则win10系统就坏了<br>
 选择空闲（Free Space），可以看到与第一步分配的磁盘空间是相同的<br>
-然后点击加号，分配磁盘空间<br>
+然后点击加号，查看磁盘空间<br>
 <a target="_blank" rel="noopener noreferrer" 
   href="https://github.com/ChuWeiEr/Luminary/raw/master/BlogPicture/ubuntu%E7%B3%BB%E7%BB%9F%E7%9B%98%E5%88%86%E9%85%8D.png"><img  src="https://github.com/ChuWeiEr/Luminary/raw/master/BlogPicture/ubuntu%E7%B3%BB%E7%BB%9F%E7%9B%98%E5%88%86%E9%85%8D.png"
-        alt="磁盘空间"/></a></p>
+        alt/></a></p>
 <p>大小选择free space的大小，主分区，空间起始位置，Ext4，/， 点击ok<br>
 等待加载完毕。<br>
 选中ext4，点击现在安装（install now）<br>
@@ -57,9 +57,16 @@ win10的系统一般后面带有ntfs，所以不要动这部分，否则win10系
   href="https://github.com/ChuWeiEr/Luminary/raw/master/BlogPicture/ubuntu%E5%BC%80%E6%9C%BA%E7%95%8C%E9%9D%A2.jpg"><img  src="https://github.com/ChuWeiEr/Luminary/raw/master/BlogPicture/ubuntu%E5%BC%80%E6%9C%BA%E7%95%8C%E9%9D%A2.jpg"
         alt/></a>
 可以选择进入ubuntu或windows10系统</p>
-<p>恭喜你，双系统安装成功！</p>
-<p>下面可以进入ubuntu系统开心的玩耍了<br>
-ubuntu系统基本配置见下一篇</p></article><section class="article labels"><a class="category" href=/categories/system/>System</a><a class="category" href=/categories/ubuntu/>Ubuntu</a><a class="tag" href=/tags/ubuntu/>Ubuntu</a></section><section class="article navigation"><p><a class="link" href="/post/python%E6%A8%A1%E5%9D%97%E5%AD%A6%E4%B9%A0-02numpycsdn/"><span class="li">&larr;</span>Python模块学习-02numpyCSDN</a></p><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-01%E5%8F%98%E9%87%8F/"><span class="li">&rarr;</span>Python基础-01变量</a class="link">
+<p>至此,双系统安装成功！</p>
+<h3 id="5-修改默认系统启动项">5. 修改默认系统启动项</h3>
+<p>进入ubuntu系统,打开终端(Ctrl+alt+T)</p>
+<p>输入</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo gedit /etc/default/grub
+</code></pre></div><p>在弹出的grub文件中,将文本&quot;GRUB_DEFAULT=0&quot;中的&quot;0&quot;改为win10系统的序号(从0开始数)</p>
+<p>例如上图,win10系统的排序为5,则改为&quot;4&rdquo;,保存并关闭.</p>
+<p>最后更新配置</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo update-grub
+</code></pre></div></article><section class="article labels"><a class="category" href=/categories/%E5%8F%8C%E7%B3%BB%E7%BB%9F/>双系统</a><a class="tag" href=/tags/ubuntu/>Ubuntu</a><a class="tag" href=/tags/win10/>win10</a><a class="tag" href=/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/>系统配置</a></section><section class="article navigation"><p><a class="link" href="/post/%E8%B5%A4%E5%A3%81%E8%B5%8B/"><span class="li">&larr;</span>赤壁赋</a></p><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-02%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/"><span class="li">&rarr;</span>Python基础-02判断语句</a class="link">
     </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
     <p class="copyright">©2020 Notepadium.</p>
     <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 

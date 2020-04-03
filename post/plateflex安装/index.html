@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>PlateFlex安装&nbsp;&ndash;&nbsp;Nicole Chu</title><link rel="stylesheet" href="/css/core.min.8a6c763abd52ea4d1d5fed58960af1ca282e95c8607a0010e9237f9de64cee875b3967d32eaee86892232d1f4d08495d.css" integrity="sha384-imx2Or1S6k0dX&#43;1YlgrxyigulchgegAQ6SN/neZM7odbOWfTLq7oaJIjLR9NCEld"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Nicole Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">PlateFlex安装</h1><p class="article date">Mar 07, 2020</p></section><article class="article markdown-body"><h2 id="plateflex安装">PlateFlex安装</h2>
+<p>以下操作基于ubuntu18.04</p>
+<h3 id="1-conda-environment">1. Conda environment</h3>
+<ul>
+<li>首先下载安装Anaconda<br>
+<a href="https://www.anaconda.com/">https://www.anaconda.com/</a></li>
+<li>查看conda环境<br>
+<code>conda info --envs</code></li>
+<li>初始状态下会有一个base环境</li>
+<li>接着创建一个新环境pflex，用于plateflex的安装，并安装相应的依赖包<br>
+<code>conda create -n pflex python=3.7 numpy pymc3 matplotlib seaborn scikit-image -c conda-forge</code></li>
+<li>此处如果下载速度慢，可以配置镜像地址，此处换的是清华源（此步可跳过）<br>
+<code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/  conda config --set show_channel_urls yes</code></li>
+<li>等待安装成功，激活这个pflex环境<br>
+<code>conda activate pflex</code></li>
+<li>可以顺便安装上ipython和jupyter<br>
+<code>conda install ipython conda install jupyter</code></li>
+</ul>
+<h3 id="2-installing-from-source">2. Installing from source</h3>
+<p>从源代码安装PlateFlex，需要从github上将仓库克隆到本地，需要以下步骤</p>
+<ul>
+<li>
+<p>第一步：注册一个github账号<br>
+<a href="https://github.com/">https://github.com/</a> <br>
+然后打开链接https://github.com/paudetseis/PlateFlex.git  将这个仓库fork到自己的github账号</p>
+</li>
+<li>
+<p>第二步：下载git<br>
+<code>sudo apt-get install git</code>  <br>
+并做配置 <br>
+<code>Git config --global user.name ‘账号的名称’  Git config --global user.email ‘账号的邮箱’</code><br>
+查看配置情况 <br>
+<code>git config user.name git config user.email</code><br>
+或者  <br>
+<code>git config --list</code>     <br>
+配置完成后，SSH设置，创建验证用的公钥<br>
+<code>ssh-keygen -C '账号的邮箱' -t rsa</code><br>
+然后 ls -a查看所有隐藏文件<br>
+<code>gedit ~/.ssh/id_rsa</code><br>
+打开后复制文件内容。 <br>
+然后打开github主页 $\Rightarrow$ edit profiles $\Rightarrow$
+title随便填，内容粘贴刚刚复制的 $\Rightarrow$ 点击add ssh key<br>
+测试ssh key是否成功，使用命令
+<code>ssh -T git@github.com</code><br>
+如果通了证明成功。</p>
+</li>
+<li>
+<p>第三步：注册码云账号<br>
+由于直接从github上下载速度太慢，或者无法成功，因此借助码云<br>
+码云是一个国内代码托管平台……<br>
+<a href="https://gitee.com/">https://gitee.com/</a><br>
+注册完成后，点击界面右上角的加号 $\Rightarrow$ 从导入Github/GitLab导入仓库 $\Rightarrow$ 导入Github仓库 $\Rightarrow$ 选择PlateFlex仓库，点击导入 <br>
+导入成功后查看仓库，并复制码云上的仓库地址https://gitee.com/×××××/PlateFlex</p>
+</li>
+<li>
+<p>第四步：使用git将码云上的仓库克隆到本地<br>
+<code>git clone https://gitee.com/×××××/PlateFlex cd PlateFlex pip install .</code></p>
+</li>
+</ul>
+<h3 id="3-测试是否安装成功">3. 测试是否安装成功</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 在pflex环境下，输入jupyter notebook,新建python3文件</span>
+<span class="c1"># 输入 </span>
+<span class="kn">import</span> <span class="nn">plateflex</span>
+<span class="n">plateflex</span><span class="o">.</span><span class="n">get_conf_flex</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><pre><code>Global model parameters currently in use by plateflex:
+------------------------------------------------------
+[Crustal thickness]        zc (float):     35000 m
+[Mantle density]           rhom (float):   3200 kg/m^3
+[Crustal density]          rhoc (float):   2700 kg/m^3
+[Water density]            rhow (float):   1030 kg/m^3
+[Air density]              rhoa (float):   0 kg/m^3
+[Fluid density]            rhof (float):   0 kg/m^3
+[Water depth]              wd (float):     0 m
+[Bouguer analysis?]        boug (int):     1 ; True
+</code></pre>
+<p>以上参考：https://paudetseis.github.io/PlateFlex/getting_started.html#installation</p></article><section class="article labels"><a class="category" href=/categories/python/>Python</a><a class="category" href=/categories/study/>study</a><a class="tag" href=/tags/plateflex/>PlateFlex</a><a class="tag" href=/tags/%E9%85%8D%E7%BD%AE/>配置</a></section><section class="article navigation"><p><a class="link" href="/post/shell%E5%AD%A6%E4%B9%A0-01%E5%85%A5%E9%97%A8/"><span class="li">&rarr;</span>shell学习-01入门</a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

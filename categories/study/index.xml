@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 Notepadium.</copyright>
-    <lastBuildDate>Fri, 14 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/categories/study/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PlateFlex安装</title>
+      <link>/post/plateflex%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/plateflex%E5%AE%89%E8%A3%85/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>shell学习-01入门</title>
