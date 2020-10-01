@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 Notepadium.</copyright>
-    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Manchester by the sea</title>
+      <link>/tags/manchester-by-the-sea/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/manchester-by-the-sea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>电影</title>
+      <link>/tags/%E7%94%B5%E5%BD%B1/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E7%94%B5%E5%BD%B1/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>出野外了</title>
@@ -274,15 +292,6 @@
     </item>
     
     <item>
-      <title>Poem</title>
-      <link>/tags/poem/</link>
-      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/poem/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>全局变量</title>
       <link>/tags/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/</link>
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
@@ -319,6 +328,15 @@
     </item>
     
     <item>
+      <title>诗歌</title>
+      <link>/tags/%E8%AF%97%E6%AD%8C/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E8%AF%97%E6%AD%8C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>进阶</title>
       <link>/tags/%E8%BF%9B%E9%98%B6/</link>
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
@@ -346,11 +364,11 @@
     </item>
     
     <item>
-      <title>Sentence</title>
-      <link>/tags/sentence/</link>
+      <title>句子</title>
+      <link>/tags/%E5%8F%A5%E5%AD%90/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/sentence/</guid>
+      <guid>/tags/%E5%8F%A5%E5%AD%90/</guid>
       <description></description>
     </item>
     
@@ -472,15 +490,6 @@
     </item>
     
     <item>
-      <title>Note</title>
-      <link>/tags/note/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/note/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>tuple</title>
       <link>/tags/tuple/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -549,6 +558,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/tags/%E6%A8%A1%E5%9D%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>纪录片</title>
+      <link>/tags/%E7%BA%AA%E5%BD%95%E7%89%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E7%BA%AA%E5%BD%95%E7%89%87/</guid>
       <description></description>
     </item>
     
