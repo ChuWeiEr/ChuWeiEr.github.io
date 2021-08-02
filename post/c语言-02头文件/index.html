@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.86.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>C语言-02头文件&nbsp;&ndash;&nbsp;Nicole Chu</title><link rel="stylesheet" href="/css/core.min.1b07c642bcc7bddb145ca58bdecdf0dbfe035928dab06816a1b538a00caecc2aa65508f7fb089a828d7032017787fd4c.css" integrity="sha384-GwfGQrzHvdsUXKWL3s3w2/4DWSjasGgWobU4oAyuzCqmVQj3&#43;wiago1wMgF3h/1M"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Nicole Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">C语言-02头文件</h1><p class="article date">Feb 08, 2020</p></section><article class="article markdown-body"><h1 id="1-新建工程">1. 新建工程</h1>
+<ul>
+<li>codeblocks新建工程<br>
+new project &ndash;&gt; console  &ndash;&gt; 将文件添加到新工程里面</li>
+</ul>
+<h4 id="c语言区分大小写">C语言区分大小写</h4>
+<h1 id="2-函数调用">2. 函数调用</h1>
+<ul>
+<li>
+<p>main.c主程序、函数放在同一个工程里面</p>
+</li>
+<li>
+<p>用主程序调用函数方法有2种</p>
+</li>
+<li>
+<p>函数 max.c</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">int</span> <span class="nb">max</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="err">?</span><span class="n">a</span><span class="p">:</span><span class="n">b</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="法1">法1：</h3>
+<ul>
+<li>主程序 main.c</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">
+<span class="c1">#include &lt;stdio.h&gt;</span>
+
+<span class="c1">#第一种:在主程序之上加一条语句</span>
+<span class="nb">int</span> <span class="nb">max</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">);</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nb">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%d</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span>
+    
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div><h3 id="法2使用头文件">法2：使用头文件</h3>
+<ul>
+<li>主程序 main.c</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#include &lt;stdio.h&gt;</span>
+<span class="c1">#include &#34;max.h&#34;</span>
+
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nb">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%d</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span>
+    
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>max.h</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">int</span> <span class="nb">max</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">);</span>
+</code></pre></div><h1 id="3-头文件">3. 头文件</h1>
+<h3 id="31-简介">3.1 简介</h3>
+<ul>
+<li>把函数原型放到一个头文件（以.h结尾）中，在需要调用这个函数的源代码文件（.c文件）中 <code>#include</code>这个头文件，就能让编译器在编译的时候知道函数的原型</li>
+<li><code>#include</code>是一个编译预处理指令，和宏一样，在编译之前就处理了</li>
+<li>把那个文件的全部文本内容原封不动地插入到它所在的地方</li>
+<li>所以不一定在.c文件的最前面 <code>#include</code></li>
+</ul>
+<h3 id="32---or--">3.2 &quot;&quot;  or  &lt;&gt;</h3>
+<ul>
+<li><code>#include</code>有两种形式来指出要插入的文件</li>
+<li>&ldquo;&ldquo;要求编译器首先在当前目录（.c文件所在的目录）寻找这个文件，如果没有，就到编译器指定的目录去找</li>
+<li>&lt;&gt;让编译器只在指定的目录去找</li>
+<li>编译器知道自己的标准库的头文件在哪里</li>
+<li>环境变量和编译器命令行参数也可以指定寻找头文件的目录</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 头文件的目录在哪里？</span>
+<span class="c1"># linux下</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="n">stdio</span><span class="o">.</span><span class="n">h</span>
+<span class="n">more</span> <span class="n">stdio</span><span class="o">.</span><span class="n">h</span>
+</code></pre></div><h3 id="33-标准头文件结构">3.3 标准头文件结构</h3>
+<ul>
+<li>运用条件编译和宏，保证这个头文件在一个编译单元中只会被#include一次</li>
+<li>#pragma once也能起到相同的作用，但是不是所有的编译器都支持</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#ifndef _LIST_HEAD_</span>
+<span class="c1">#define _LIST_HEAD_</span>
+
+<span class="c1">#include &#34;node.h&#34;</span>
+
+<span class="n">typedef</span> <span class="n">struct</span> <span class="n">_list</span><span class="p">{</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">head</span><span class="p">;</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">tail</span><span class="p">;</span>
+    
+<span class="p">}</span><span class="n">List</span><span class="p">;</span>
+
+<span class="c1">#endif</span>
+</code></pre></div><ul>
+<li>参考： bibili- 从语言程序设计-浙江大学-翁恺
+<a href="https://www.bilibili.com/video/av15267247?p=110"target="_blank">https://www.bilibili.com/video/av15267247?p=110</a></li>
+</ul></article><section class="article labels"><a class="category" href=/categories/c/>C</a><a class="tag" href=/tags/%E5%A4%B4%E6%96%87%E4%BB%B6/>头文件</a><a class="tag" href=/tags/%E5%87%BD%E6%95%B0/>函数</a></section><section class="article navigation"><p><a class="link" href="/post/brave/"><span class="li">&rarr;</span>生命在于莽撞 </a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

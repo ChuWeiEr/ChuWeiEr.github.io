@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Literature on Nicole Chu</title>
+    <link>/categories/literature/</link>
+    <description>Recent content in Literature on Nicole Chu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>©2020 Notepadium.</copyright>
+    <lastBuildDate>Thu, 30 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/literature/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>生命在于莽撞 </title>
+      <link>/post/brave/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/brave/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
