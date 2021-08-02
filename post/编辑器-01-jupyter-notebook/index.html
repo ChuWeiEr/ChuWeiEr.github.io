@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.86.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>编辑器-01-jupyter notebook&nbsp;&ndash;&nbsp;Wei Chu</title><link rel="stylesheet" href="/css/core.min.1b07c642bcc7bddb145ca58bdecdf0dbfe035928dab06816a1b538a00caecc2aa65508f7fb089a828d7032017787fd4c.css" integrity="sha384-GwfGQrzHvdsUXKWL3s3w2/4DWSjasGgWobU4oAyuzCqmVQj3&#43;wiago1wMgF3h/1M"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Wei Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">编辑器-01-jupyter notebook</h1><p class="article date">Mar 11, 2020</p></section><article class="article markdown-body"><h1 id="第一部分-jupyter-notebook">第一部分 Jupyter Notebook</h1>
+<h4 id="perez--granger-2007">Perez &amp; Granger 2007</h4>
+<h4 id="官网-httpjupyterorg">官网： <a href="http://jupyter.org/"target="_blank">http://jupyter.org/</a></h4>
+<h2 id="1jupyter-notebook-激活conda环境">1.jupyter notebook 激活conda环境</h2>
+<p><a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments"target="_blank">https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments</a></p>
+<h4 id="目标在jupyter-notebook-照片那个随意选择建立的环境">目标：在jupyter notebook 照片那个随意选择建立的环境</h4>
+<ol>
+<li>安装 ipykernel<br>
+<code>conda install ipykernel</code></li>
+</ol>
+<ul>
+<li>激活想要添加的环境，例如moho<br>
+<code>conda activate moho</code></li>
+<li>将环境写入notebook的kernel中<br>
+<code>python -m ipykernel install --user --name moho --display-name moho</code><br>
+解释：在jupyter notebook中加载环境moho，显示名称为moho</li>
+<li>打开jupyter notebook查看<br>
+在kernel中可以看到新添加的环境</li>
+<li>删除jupyter notebook的kernel环境<br>
+<code>jupyter kernelspec remove moho</code></li>
+</ul>
+<h2 id="2-jupyter-notebook中集成bash-kernal">2. jupyter notebook中集成bash kernal</h2>
+<ol>
+<li>安装<br>
+<code>pip install bash_kernel</code></li>
+<li>写入notebook的kernel中<br>
+<code>python -m bash_kernel.install</code></li>
+</ol>
+<h1 id="第二部分-anaconda">第二部分 Anaconda</h1>
+<h2 id="1创建anaconda环境">1.创建anaconda环境</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 1. 查看anaconda环境</span>
+<span class="c1"># 前面有个 * 的代表当前环境</span>
+<span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">env</span>
+
+<span class="c1"># 2. 创建python环境</span>
+<span class="c1"># 代表创建一个python3.7的环境，我们把它命名为pyt37</span>
+<span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">py37</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.7</span> <span class="n">ipykernel</span>
+
+<span class="c1"># 3. 管理和使用python环境</span>
+<span class="c1"># 激活环境</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">py37</span>
+
+<span class="c1"># 4. 列出所有环境</span>
+<span class="n">conda</span> <span class="n">env</span> <span class="nb">list</span>
+
+<span class="c1"># 5. 查看当前环境中安装的包</span>
+<span class="n">conda</span> <span class="nb">list</span>
+
+<span class="c1"># 6.删除环境</span>
+<span class="n">conda</span> <span class="n">remove</span> <span class="o">-</span><span class="n">n</span> <span class="n">py37</span> <span class="o">--</span><span class="nb">all</span>
+
+<span class="c1"># 7. 退出环境 </span>
+<span class="c1"># 不需要其实～</span>
+<span class="n">conda</span> <span class="n">deactivate</span>
+
+
+<span class="c1">#在使用import win32api时，报错:No module named win32api</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pypiwin32</span>
+
+<span class="n">或</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">pypiwin32</span> 
+
+<span class="n">或</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pypiwin32</span>
+
+</code></pre></div><h2 id="2-管理anaconda环境">2. 管理anaconda环境</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 在新建好的环境中管理包</span>
+<span class="c1"># 1. 查看已安装的包</span>
+<span class="n">conda</span> <span class="nb">list</span>
+
+<span class="c1"># 2. 安装basemap（）</span>
+<span class="c1"># 下载pyproj.whl、basemap.whl</span>
+<span class="c1"># Pip install 文件名</span>
+<span class="c1"># 此处conda只是举个例子</span>
+<span class="c1"># 不要用conda安装basemap</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">basemap</span>
+
+<span class="c1"># 3. 包更新</span>
+<span class="n">conda</span> <span class="n">update</span> <span class="n">basemap</span>
+<span class="c1"># 更新所有安装包，在anaconda prompt 里面输入 </span>
+<span class="n">conda</span> <span class="n">upgrade</span> <span class="o">--</span><span class="nb">all</span>
+
+<span class="c1"># 4. 删除包</span>
+<span class="n">conda</span> <span class="n">remove</span> <span class="n">basemap</span>
+
+<span class="c1"># 其他安装</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">jupyter</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">ipython</span>
+
+<span class="c1"># windows下安装包的网站</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">lfd</span><span class="o">.</span><span class="n">uci</span><span class="o">.</span><span class="n">edu</span><span class="o">/~</span><span class="n">gohlke</span><span class="o">/</span><span class="n">pythonlibs</span>
+
+</code></pre></div><h2 id="3-配置好的虚拟环境添加到pycharm中">3. 配置好的虚拟环境添加到pycharm中</h2>
+<ul>
+<li>打开右上角file，点击settings，找到project workplace中的 project interpreter</li>
+<li>点击右上角 设置符号（齿轮形） 中的“add”，选择existing environment</li>
+<li>点击interpreter，找到虚拟环境中的python.exe，添加，完成。可以应用到所有projects中。</li>
+</ul>
+<h2 id="4-导出环境">4. 导出环境</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 共享环境这项功能确实很有用，</span>
+<span class="c1"># 它能让其他人安装你的代码中使用的所有包</span>
+<span class="c1"># 并确保这些包的版本正确。</span>
+
+<span class="c1">#  1. 将包保导出为 YAML</span>
+<span class="c1"># 命令的第一部分 `conda env export `用于输出环境中的所有包的名称（包括 Python 版本）</span>
+<span class="c1"># 导出命令的第二部分 `&gt; environment.yml `将导出的文本写入到 YAML 文件 environment.yml 中。</span>
+<span class="n">conda</span> <span class="n">env</span> <span class="n">export</span> <span class="o">&gt;</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span> 
+
+<span class="c1"># 2. 通过环境文件创建环境</span>
+<span class="c1"># 这会创建一个新环境，而且它具有同样的在 environment.yml 中列出的库</span>
+<span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
+</code></pre></div><h2 id="5-换源">5. 换源</h2>
+<ul>
+<li>配置镜像地址，否则从官方网站下载升级文件太慢</li>
+<li>安装完成后，找到Anaconda prompt，加入镜像地址，完成配置</li>
+<li>此处换的是清华源</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ 
+conda config --set show_channel_urls yes
+</code></pre></div><h4 id="注-编译环境-spyderjupyter-notebook都是ipython内核">注： 编译环境-spyder、Jupyter notebook都是ipython内核</h4>
+<h2 id="6解决matplotlib的legend无法显示中文">6.解决matplotlib的legend无法显示中文</h2>
+<ul>
+<li>参考链接：https://www.jb51.net/article/155547.htm
+1.在python安装目录的Lib目录下创建ch.py文件。</li>
+</ul>
+<p>文件中代码为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#-*-coding:utf-8-*- </span>
+<span class="c1">#文件名: ch.py </span>
+<span class="k">def</span> <span class="nf">set_ch</span><span class="p">():</span> 
+    <span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="n">mpl</span> 
+    <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FangSong&#39;</span><span class="p">]</span> <span class="c1"># 指定默认字体 </span>
+    <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.unicode_minus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># 解决保存图像是负号&#39;-&#39;显示为方块的问题</span>
+
+</code></pre></div><p>打开ipython测试一下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">ch</span>
+<span class="n">ch</span><span class="o">.</span><span class="n">set_ch</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">u</span><span class="s2">&#34;显示中文&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><h2 id="7解决jupyter-notebook绘图时中文乱码问题">7.解决jupyter notebook绘图时中文乱码问题</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#在 </span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+
+<span class="c1">#后面加上下面一行语句：</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;font&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;SimHei&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1">##显示中文</span>
+
+<span class="c1">#size=10 表示中文字体大小，根据自己需要调整</span>
+</code></pre></div></article><section class="article labels"><a class="category" href=/categories/%E7%BC%96%E8%BE%91%E5%99%A8/>编辑器</a><a class="tag" href=/tags/jupyter-notebook/>jupyter notebook</a><a class="tag" href=/tags/anaconda/>anaconda</a><a class="tag" href=/tags/%E9%85%8D%E7%BD%AE/>配置</a></section><section class="article navigation"><p><a class="link" href="/post/brave/"><span class="li">&rarr;</span>生命在于莽撞 </a class="link">
+    </p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

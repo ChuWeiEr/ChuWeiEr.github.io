@@ -1,32 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Nicole Chu</title>
+    <title>Tags on Wei Chu</title>
     <link>/tags/</link>
-    <description>Recent content in Tags on Nicole Chu</description>
+    <description>Recent content in Tags on Wei Chu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 Notepadium.</copyright>
-    <lastBuildDate>Sat, 08 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>函数</title>
-      <link>/tags/%E5%87%BD%E6%95%B0/</link>
-      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <title>anaconda</title>
+      <link>/tags/anaconda/</link>
+      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/%E5%87%BD%E6%95%B0/</guid>
+      <guid>/tags/anaconda/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>头文件</title>
-      <link>/tags/%E5%A4%B4%E6%96%87%E4%BB%B6/</link>
-      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <title>jupyter notebook</title>
+      <link>/tags/jupyter-notebook/</link>
+      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/%E5%A4%B4%E6%96%87%E4%BB%B6/</guid>
+      <guid>/tags/jupyter-notebook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>配置</title>
+      <link>/tags/%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E9%85%8D%E7%BD%AE/</guid>
       <description></description>
     </item>
     

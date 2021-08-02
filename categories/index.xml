@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Nicole Chu</title>
+    <title>Categories on Wei Chu</title>
     <link>/categories/</link>
-    <description>Recent content in Categories on Nicole Chu</description>
+    <description>Recent content in Categories on Wei Chu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 Notepadium.</copyright>
-    <lastBuildDate>Sat, 08 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>C</title>
-      <link>/categories/c/</link>
-      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      <title>编辑器</title>
+      <link>/categories/%E7%BC%96%E8%BE%91%E5%99%A8/</link>
+      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/c/</guid>
+      <guid>/categories/%E7%BC%96%E8%BE%91%E5%99%A8/</guid>
       <description></description>
     </item>
     
