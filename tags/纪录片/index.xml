@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Literature on Wei Chu</title>
-    <link>/categories/literature/</link>
-    <description>Recent content in Literature on Wei Chu</description>
+    <title>纪录片 on Wei Chu</title>
+    <link>/tags/%E7%BA%AA%E5%BD%95%E7%89%87/</link>
+    <description>Recent content in 纪录片 on Wei Chu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 Notepadium.</copyright>
     <lastBuildDate>Mon, 02 Aug 2021 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/categories/literature/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/tags/%E7%BA%AA%E5%BD%95%E7%89%87/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,24 +19,6 @@
       
       <guid>/post/%E5%A4%A7%E6%98%8E%E5%AE%AB/</guid>
       <description>公元618年，大唐建立，定都长安城 九天阊（chang）阖（he）开宫殿 万国衣冠拜冕（mian）旒（liu） 含元殿 慈恩寺-第一代住持-玄奘 晨钟</description>
-    </item>
-    
-    <item>
-      <title>Manchester by the sea</title>
-      <link>/post/manchester-by-the-sea/</link>
-      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/manchester-by-the-sea/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>生命在于莽撞 </title>
-      <link>/post/brave/</link>
-      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/brave/</guid>
-      <description></description>
     </item>
     
   </channel>
