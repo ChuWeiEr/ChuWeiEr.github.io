@@ -31,15 +31,6 @@
     </item>
     
     <item>
-      <title>anaconda</title>
-      <link>/tags/anaconda/</link>
-      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/anaconda/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>jupyter notebook</title>
       <link>/tags/jupyter-notebook/</link>
       <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
@@ -49,29 +40,11 @@
     </item>
     
     <item>
-      <title>配置</title>
-      <link>/tags/%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/%E9%85%8D%E7%BD%AE/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>句子</title>
       <link>/tags/%E5%8F%A5%E5%AD%90/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/%E5%8F%A5%E5%AD%90/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>index</title>
-      <link>/tags/index/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/index/</guid>
       <description></description>
     </item>
     
