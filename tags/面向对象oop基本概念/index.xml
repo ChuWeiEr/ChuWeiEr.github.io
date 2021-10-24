@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>面向对象(OOP)基本概念 on Wei Chu</title>
+    <link>/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1oop%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+    <description>Recent content in 面向对象(OOP)基本概念 on Wei Chu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>©2020 Notepadium.</copyright>
+    <lastBuildDate>Fri, 22 Oct 2021 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1oop%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python面向对象-01-面向对象(OOP)基本概念</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-01_%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1oop%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-01_%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1oop%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

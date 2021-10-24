@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.86.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Python基础-15-变量进阶&nbsp;&ndash;&nbsp;Wei Chu</title><link rel="stylesheet" href="/css/core.min.746d4f5e0f69f8ca3fdabdfef6b99d63a9852de221102d14b47177e2a4e0fb979941c84b1ae5b6a490e592140624482e.css" integrity="sha384-dG1PXg9p&#43;Mo/2r3&#43;9rmdY6mFLeIhEC0UtHF34qTg&#43;5eZQchLGuW2pJDlkhQGJEgu"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Wei Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Python基础-15-变量进阶</h1><p class="article date">Oct 22, 2021<span class="reading-time"> • 5 minutes to read</span></p></section><article class="article markdown-body"><h1 id="变量进阶理解">变量进阶（理解）</h1>
+<h2 id="目标">目标</h2>
+<ul>
+<li>变量的引用</li>
+<li>可变和不可变类型</li>
+<li>局部变量和全局变量</li>
+</ul>
+<h2 id="01-变量的引用">01. 变量的引用</h2>
+<blockquote>
+<ul>
+<li>变量 和 数据 都是保存在 <strong>内存</strong> 中的</li>
+<li>在 <code>Python</code> 中 <strong>函数 的 参数传递</strong> 以及 <strong>返回值</strong> 都是靠 <strong>引用</strong> 传递的</li>
+</ul>
+</blockquote>
+<h3 id="11-引用的概念">1.1 引用的概念</h3>
+<p>在 <code>Python</code> 中</p>
+<ul>
+<li><strong>变量</strong> 和 <strong>数据</strong> 是分开存储的</li>
+<li><strong>数据</strong> 保存在内存中的一个位置</li>
+<li><strong>变量</strong> 中保存着数据在内存中的地址</li>
+<li><strong>变量</strong> 中 <strong>记录数据的地址</strong>，就叫做 <strong>引用</strong></li>
+<li>使用 <code>id()</code> 函数可以查看变量中保存数据所在的 <strong>内存地址</strong></li>
+</ul>
+<blockquote>
+<p>注意：如果变量已经被定义，当给一个变量赋值的时候，本质上是 <strong>修改了数据的引用</strong></p>
+<ul>
+<li>变量 <strong>不再</strong> 对之前的数据引用</li>
+<li>变量 <strong>改为</strong> 对新赋值的数据引用</li>
+</ul>
+</blockquote>
+<h3 id="12-变量引用-的示例">1.2 <code>变量引用</code> 的示例</h3>
+<p>在 <code>Python</code> 中，变量的名字类似于 <strong>便签纸</strong> 贴在 <strong>数据</strong> 上</p>
+<ul>
+<li>定义一个整数变量 <code>a</code>，并且赋值为 <code>1</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">代码</th>
+<th style="text-align:center">图示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a = 1</td>
+<td style="text-align:center"><a target="_blank" rel="noopener noreferrer" 
+  href="media/14982751015713/004_a1tag.png"><img  src="media/14982751015713/004_a1tag.png"
+        alt="004_a1tag"/></a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>将变量 <code>a</code> 赋值为 <code>2</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">代码</th>
+<th style="text-align:center">图示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a = 2</td>
+<td style="text-align:center"><a target="_blank" rel="noopener noreferrer" 
+  href="media/14982751015713/005_a2tag.png"><img  src="media/14982751015713/005_a2tag.png"
+        alt="005_a2tag"/></a><a target="_blank" rel="noopener noreferrer" 
+  href="media/14982751015713/005_1.png"><img  src="media/14982751015713/005_1.png"
+        alt="005_1"/></a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>定义一个整数变量 <code>b</code>，并且将变量 <code>a</code> 的值赋值给 <code>b</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">代码</th>
+<th style="text-align:center">图示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">b = a</td>
+<td style="text-align:center"><a target="_blank" rel="noopener noreferrer" 
+  href="media/14982751015713/006_ab2tag.png"><img  src="media/14982751015713/006_ab2tag.png"
+        alt="006_ab2tag"/></a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>变量 <code>b</code> 是第 2 个贴在数字 <code>2</code> 上的标签</p>
+</blockquote>
+<h3 id="13-函数的参数和返回值的传递">1.3 函数的参数和返回值的传递</h3>
+<p>在 <code>Python</code> 中，函数的 <strong>实参</strong>/<strong>返回值</strong> 都是是靠 <strong>引用</strong> 来传递来的</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;-&#34;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%d</span><span class="s2"> 在函数内的内存地址是 </span><span class="si">%x</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">num</span><span class="p">)))</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">100</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;返回值 </span><span class="si">%d</span><span class="s2"> 在内存中的地址是 </span><span class="si">%x</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">result</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;-&#34;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+
+    <span class="k">return</span>  <span class="n">result</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;调用函数前 内存地址是 </span><span class="si">%x</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;调用函数后 实参内存地址是 </span><span class="si">%x</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;调用函数后 返回值内存地址是 </span><span class="si">%x</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="nb">id</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+
+</code></pre></div><h2 id="02-可变和不可变类型">02. 可变和不可变类型</h2>
+<ul>
+<li>
+<p><strong>不可变类型</strong>，内存中的数据不允许被修改：</p>
+<ul>
+<li>数字类型 <code>int</code>, <code>bool</code>, <code>float</code>, <code>complex</code>, <code>long(2.x)</code></li>
+<li>字符串 <code>str</code></li>
+<li>元组 <code>tuple</code></li>
+</ul>
+</li>
+<li>
+<p><strong>可变类型</strong>，内存中的数据可以被修改：</p>
+<ul>
+<li>列表 <code>list</code></li>
+<li>字典 <code>dict</code></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;hello&#34;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">demo_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;定义列表后的内存地址 </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="nb">id</span><span class="p">(</span><span class="n">demo_list</span><span class="p">))</span>
+
+<span class="n">demo_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">999</span><span class="p">)</span>
+<span class="n">demo_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">demo_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">demo_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;修改数据后的内存地址 </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="nb">id</span><span class="p">(</span><span class="n">demo_list</span><span class="p">))</span>
+
+<span class="n">demo_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;小明&#34;</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;定义字典后的内存地址 </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="nb">id</span><span class="p">(</span><span class="n">demo_dict</span><span class="p">))</span>
+
+<span class="n">demo_dict</span><span class="p">[</span><span class="s2">&#34;age&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="n">demo_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&#34;name&#34;</span><span class="p">)</span>
+<span class="n">demo_dict</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;老王&#34;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;修改数据后的内存地址 </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="nb">id</span><span class="p">(</span><span class="n">demo_dict</span><span class="p">))</span>
+
+</code></pre></div><blockquote>
+<p>注意：字典的 <code>key</code> <strong>只能使用不可变类型的数据</strong></p>
+</blockquote>
+<p><strong>注意</strong></p>
+<ol>
+<li><strong>可变类型</strong>的数据变化，是通过 <strong>方法</strong> 来实现的</li>
+<li>如果给一个可变类型的变量，赋值了一个新的数据，<strong>引用会修改</strong>
+<ul>
+<li>变量 <strong>不再</strong> 对之前的数据引用</li>
+<li>变量 <strong>改为</strong> 对新赋值的数据引用</li>
+</ul>
+</li>
+</ol>
+<h3 id="哈希-hash">哈希 <code>(hash)</code></h3>
+<ul>
+<li><code>Python</code> 中内置有一个名字叫做 <code>hash(o)</code> 的函数
+<ul>
+<li>接收一个 <strong>不可变类型</strong> 的数据作为 <strong>参数</strong></li>
+<li><strong>返回</strong> 结果是一个 <strong>整数</strong></li>
+</ul>
+</li>
+<li><code>哈希</code> 是一种 <strong>算法</strong>，其作用就是提取数据的 <strong>特征码（指纹）</strong>
+<ul>
+<li><strong>相同的内容</strong> 得到 <strong>相同的结果</strong></li>
+<li><strong>不同的内容</strong> 得到 <strong>不同的结果</strong></li>
+</ul>
+</li>
+<li>在 <code>Python</code> 中，设置字典的 <strong>键值对</strong> 时，会首先对 <code>key</code> 进行 <code>hash</code> 已决定如何在内存中保存字典的数据，以方便 <strong>后续</strong> 对字典的操作：<strong>增、删、改、查</strong>
+<ul>
+<li>键值对的 <code>key</code> 必须是不可变类型数据</li>
+<li>键值对的 <code>value</code> 可以是任意类型的数据</li>
+</ul>
+</li>
+</ul>
+<h2 id="03-局部变量和全局变量">03. 局部变量和全局变量</h2>
+<ul>
+<li><strong>局部变量</strong> 是在 <strong>函数内部</strong> 定义的变量，<strong>只能在函数内部使用</strong></li>
+<li><strong>全局变量</strong> 是在 <strong>函数外部定义</strong> 的变量（没有定义在某一个函数内），<strong>所有函数</strong> 内部 <strong>都可以使用这个变量</strong></li>
+</ul>
+<blockquote>
+<p>提示：在其他的开发语言中，大多 <strong>不推荐使用全局变量</strong> —— 可变范围太大，导致程序不好维护！</p>
+</blockquote>
+<h3 id="31-局部变量">3.1 局部变量</h3>
+<ul>
+<li><strong>局部变量</strong> 是在 <strong>函数内部</strong> 定义的变量，<strong>只能在函数内部使用</strong></li>
+<li>函数执行结束后，<strong>函数内部的局部变量，会被系统回收</strong></li>
+<li>不同的函数，可以定义相同的名字的局部变量，但是 <strong>彼此之间</strong> 不会产生影响</li>
+</ul>
+<h4 id="局部变量的作用">局部变量的作用</h4>
+<ul>
+<li>在函数内部使用，<strong>临时</strong> 保存 <strong>函数内部需要使用的数据</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">demo1</span><span class="p">():</span>
+
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">20</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;修改后 </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">num</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">demo2</span><span class="p">():</span>
+
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">100</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+<span class="n">demo1</span><span class="p">()</span>
+<span class="n">demo2</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;over&#34;</span><span class="p">)</span>
+
+</code></pre></div><h4 id="局部变量的生命周期">局部变量的生命周期</h4>
+<ul>
+<li>所谓 <strong>生命周期</strong> 就是变量从 <strong>被创建</strong> 到 <strong>被系统回收</strong> 的过程</li>
+<li><strong>局部变量</strong> 在 <strong>函数执行时</strong> 才会被创建</li>
+<li><strong>函数执行结束后</strong> 局部变量 <strong>被系统回收</strong></li>
+<li><strong>局部变量在生命周期</strong> 内，可以用来存储 <strong>函数内部临时使用到的数据</strong></li>
+</ul>
+<h3 id="32-全局变量">3.2 全局变量</h3>
+<ul>
+<li><strong>全局变量</strong> 是在 <strong>函数外部定义</strong> 的变量，所有函数内部都可以使用这个变量</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 定义一个全局变量</span>
+<span class="n">num</span> <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="k">def</span> <span class="nf">demo1</span><span class="p">():</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">demo2</span><span class="p">():</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+<span class="n">demo1</span><span class="p">()</span>
+<span class="n">demo2</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;over&#34;</span><span class="p">)</span>
+
+</code></pre></div><p><strong>注意</strong>：函数执行时，<strong>需要处理变量时</strong> 会：</p>
+<ol>
+<li><strong>首先</strong> 查找 <strong>函数内部</strong> 是否存在 <strong>指定名称 的局部变量</strong>，<strong>如果有，直接使用</strong></li>
+<li>如果没有，查找 <strong>函数外部</strong> 是否存在 <strong>指定名称 的全局变量</strong>，<strong>如果有，直接使用</strong></li>
+<li>如果还没有，程序报错！</li>
+</ol>
+<h4 id="1-函数不能直接修改-全局变量的引用">1) 函数不能直接修改 <code>全局变量的引用</code></h4>
+<ul>
+<li><strong>全局变量</strong> 是在 <strong>函数外部定义</strong> 的变量（没有定义在某一个函数内），<strong>所有函数</strong> 内部 <strong>都可以使用这个变量</strong></li>
+</ul>
+<blockquote>
+<p>提示：在其他的开发语言中，大多 <strong>不推荐使用全局变量</strong> —— 可变范围太大，导致程序不好维护！</p>
+</blockquote>
+<ul>
+<li>在函数内部，可以 <strong>通过全局变量的引用获取对应的数据</strong></li>
+<li>但是，<strong>不允许直接修改全局变量的引用</strong> —— 使用赋值语句修改全局变量的值</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">num</span> <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="k">def</span> <span class="nf">demo1</span><span class="p">():</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;demo1&#34;</span> <span class="o">+</span> <span class="s2">&#34;-&#34;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+
+    <span class="c1"># 只是定义了一个局部变量，不会修改到全局变量，只是变量名相同而已</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">demo2</span><span class="p">():</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;demo2&#34;</span> <span class="o">+</span> <span class="s2">&#34;-&#34;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+<span class="n">demo1</span><span class="p">()</span>
+<span class="n">demo2</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;over&#34;</span><span class="p">)</span>
+
+</code></pre></div><blockquote>
+<p>注意：只是在函数内部定义了一个局部变量而已，只是变量名相同 —— 在函数内部不能直接修改全局变量的值</p>
+</blockquote>
+<h4 id="2-在函数内部修改全局变量的值">2) 在函数内部修改全局变量的值</h4>
+<ul>
+<li>如果在函数中需要修改全局变量，需要使用 <code>global</code> 进行声明</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">num</span> <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="k">def</span> <span class="nf">demo1</span><span class="p">():</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;demo1&#34;</span> <span class="o">+</span> <span class="s2">&#34;-&#34;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+
+    <span class="c1"># global 关键字，告诉 Python 解释器 num 是一个全局变量</span>
+    <span class="k">global</span> <span class="n">num</span>
+    <span class="c1"># 只是定义了一个局部变量，不会修改到全局变量，只是变量名相同而已</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">demo2</span><span class="p">():</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;demo2&#34;</span> <span class="o">+</span> <span class="s2">&#34;-&#34;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+<span class="n">demo1</span><span class="p">()</span>
+<span class="n">demo2</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;over&#34;</span><span class="p">)</span>
+
+</code></pre></div><h4 id="3-全局变量定义的位置">3) 全局变量定义的位置</h4>
+<ul>
+<li>为了保证所有的函数都能够正确使用到全局变量，应该 <strong>将全局变量定义在其他函数的上方</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="k">def</span> <span class="nf">demo</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">demo</span><span class="p">()</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">30</span>
+
+</code></pre></div><p><strong>注意</strong></p>
+<ul>
+<li>由于全局变量 c，是在调用函数之后，才定义的，在执行函数时，变量还没有定义，所以程序会报错！</li>
+</ul>
+<p><strong>代码结构示意图如下</strong></p>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="media/14982751015713/001_%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png"><img  src="media/14982751015713/001_%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png"
+        alt="001_代码结构示意图-w240"/></a></p>
+<h4 id="4-全局变量命名的建议">4) 全局变量命名的建议</h4>
+<ul>
+<li>为了避免局部变量和全局变量出现混淆，在定义全局变量时，有些公司会有一些开发要求，例如：</li>
+<li>全局变量名前应该增加 <code>g_</code> 或者 <code>gl_</code> 的前缀</li>
+</ul>
+<blockquote>
+<p>提示：具体的要求格式，各公司要求可能会有些差异</p>
+</blockquote></article><section class="article labels"><a class="category" href=/categories/python%E5%9F%BA%E7%A1%80/>Python基础</a><a class="tag" href=/tags/%E5%8F%98%E9%87%8F%E8%BF%9B%E9%98%B6/>变量进阶</a></section><section class="article navigation"><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-14-%E9%AB%98%E7%BA%A7%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/"><span class="li">&larr;</span>Python基础-14-高级变量类型</a></p><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-16-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/"><span class="li">&rarr;</span>Python基础-16-函数进阶</a class="link">
+    </p></section></div><section id="footer" class="footer">
+    <script src="https://utteranc.es/client.js"
+        repo="ChuWeiEr/hugoblogtalks"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

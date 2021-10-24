@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.86.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Python面向对象-05-面向对象封装案例 II&nbsp;&ndash;&nbsp;Wei Chu</title><link rel="stylesheet" href="/css/core.min.746d4f5e0f69f8ca3fdabdfef6b99d63a9852de221102d14b47177e2a4e0fb979941c84b1ae5b6a490e592140624482e.css" integrity="sha384-dG1PXg9p&#43;Mo/2r3&#43;9rmdY6mFLeIhEC0UtHF34qTg&#43;5eZQchLGuW2pJDlkhQGJEgu"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Wei Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Python面向对象-05-面向对象封装案例 II</h1><p class="article date">Oct 22, 2021<span class="reading-time"> • 2 minutes to read</span></p></section><article class="article markdown-body"><h1 id="面向对象封装案例-ii">面向对象封装案例 II</h1>
+<h2 id="目标">目标</h2>
+<ul>
+<li>士兵突击案例</li>
+<li>身份运算符</li>
+</ul>
+<p><strong>封装</strong></p>
+<ol>
+<li><strong>封装</strong> 是面向对象编程的一大特点</li>
+<li>面向对象编程的 <strong>第一步</strong> —— 将 <strong>属性</strong> 和 <strong>方法</strong> <strong>封装</strong> 到一个抽象的 <strong>类</strong> 中</li>
+<li><strong>外界</strong> 使用 <strong>类</strong> 创建 <strong>对象</strong>，然后 <strong>让对象调用方法</strong></li>
+<li><strong>对象方法的细节</strong> 都被 <strong>封装</strong> 在 <strong>类的内部</strong></li>
+</ol>
+<blockquote>
+<p>一个对象的 <strong>属性</strong> 可以是 <strong>另外一个类创建的对象</strong></p>
+</blockquote>
+<h2 id="01-士兵突击">01. 士兵突击</h2>
+<p><strong>需求</strong></p>
+<ol>
+<li><strong>士兵</strong> <strong>许三多</strong> 有一把 <strong>AK47</strong></li>
+<li><strong>士兵</strong> 可以 <strong>开火</strong></li>
+<li><strong>枪</strong> 能够 <strong>发射</strong> 子弹</li>
+<li><strong>枪</strong> 装填 <strong>装填子弹</strong> —— <strong>增加子弹数量</strong></li>
+</ol>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="media/15006304901683/009_%E5%A3%AB%E5%85%B5%E7%AA%81%E5%87%BB.png"><img  src="media/15006304901683/009_%E5%A3%AB%E5%85%B5%E7%AA%81%E5%87%BB.png"
+        alt="009_士兵突击-w610"/></a></p>
+<h3 id="11-开发枪类">1.1 开发枪类</h3>
+<p><strong><code>shoot</code> 方法需求</strong></p>
+<ul>
+<li>1&gt; 判断是否有子弹，没有子弹无法射击</li>
+<li>2&gt; 使用 <code>print</code> 提示射击，并且输出子弹数量</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Gun</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+
+        <span class="c1"># 枪的型号</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="c1"># 子弹数量</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bullet_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">add_bullet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">bullet_count</span> <span class="o">+=</span> <span class="n">count</span>
+
+    <span class="k">def</span> <span class="nf">shoot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="c1"># 判断是否还有子弹</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bullet_count</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;没有子弹了...&#34;</span><span class="p">)</span>
+
+            <span class="k">return</span>
+
+        <span class="c1"># 发射一颗子弹</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bullet_count</span> <span class="o">-=</span> <span class="mi">1</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%s</span><span class="s2"> 发射子弹[</span><span class="si">%d</span><span class="s2">]...&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bullet_count</span><span class="p">))</span>
+
+<span class="c1"># 创建枪对象</span>
+<span class="n">ak47</span> <span class="o">=</span> <span class="n">Gun</span><span class="p">(</span><span class="s2">&#34;ak47&#34;</span><span class="p">)</span>
+<span class="n">ak47</span><span class="o">.</span><span class="n">add_bullet</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">ak47</span><span class="o">.</span><span class="n">shoot</span><span class="p">()</span>
+
+</code></pre></div><h3 id="12-开发士兵类">1.2 开发士兵类</h3>
+<blockquote>
+<p>假设：每一个新兵 都 <strong>没有枪</strong></p>
+</blockquote>
+<p><strong>定义没有初始值的属性</strong></p>
+<p>在定义属性时，如果 <strong>不知道设置什么初始值</strong>，可以设置为 <code>None</code></p>
+<ul>
+<li><code>None</code> <strong>关键字</strong> 表示 <strong>什么都没有</strong></li>
+<li>表示一个 <strong>空对象</strong>，<strong>没有方法和属性，是一个特殊的常量</strong></li>
+<li>可以将 <code>None</code> 赋值给任何一个变量</li>
+</ul>
+<p><strong><code>fire</code> 方法需求</strong></p>
+<ul>
+<li>1&gt; 判断是否有枪，没有枪没法冲锋</li>
+<li>2&gt; 喊一声口号</li>
+<li>3&gt; 装填子弹</li>
+<li>4&gt; 射击</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Soldier</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+        <span class="c1"># 姓名</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="c1"># 枪，士兵初始没有枪 None 关键字表示什么都没有</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gun</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">fire</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="c1"># 1. 判断士兵是否有枪</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gun</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[</span><span class="si">%s</span><span class="s2">] 还没有枪...&#34;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+            <span class="k">return</span>
+
+        <span class="c1"># 2. 高喊口号</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;冲啊...[</span><span class="si">%s</span><span class="s2">]&#34;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="c1"># 3. 让枪装填子弹</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gun</span><span class="o">.</span><span class="n">add_bullet</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+
+        <span class="c1"># 4. 让枪发射子弹</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gun</span><span class="o">.</span><span class="n">shoot</span><span class="p">()</span>
+</code></pre></div><p><strong>小结</strong></p>
+<ol>
+<li>创建了一个 <strong>士兵类</strong>，使用到 <code>__init__</code> 内置方法</li>
+<li>在定义属性时，如果 <strong>不知道设置什么初始值</strong>，可以设置为 <code>None</code></li>
+<li>在 <strong>封装的</strong> 方法内部，还可以让 <strong>自己的</strong> <strong>使用其他类创建的对象属性</strong> 调用已经 <strong>封装好的方法</strong></li>
+</ol>
+<h2 id="02-身份运算符">02. 身份运算符</h2>
+<p>身份运算符用于 <strong>比较</strong> 两个对象的 <strong>内存地址</strong> 是否一致 —— <strong>是否是对同一个对象的引用</strong></p>
+<ul>
+<li>在 <code>Python</code> 中针对 <code>None</code> 比较时，建议使用 <code>is</code> 判断</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>is</td>
+<td>is 是判断两个标识符是不是引用同一个对象</td>
+<td>x is y，类似 id(x) == id(y)</td>
+</tr>
+<tr>
+<td>is not</td>
+<td>is not 是判断两个标识符是不是引用不同对象</td>
+<td>x is not y，类似 id(a) != id(b)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="is-与--区别">is 与 == 区别：</h3>
+<p><code>is</code> 用于判断 <strong>两个变量 引用对象是否为同一个</strong>
+<code>==</code> 用于判断 <strong>引用变量的值</strong> 是否相等</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="ow">is</span> <span class="n">a</span> 
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">==</span> <span class="n">a</span>
+<span class="kc">True</span>
+</code></pre></div></article><section class="article labels"><a class="category" href=/categories/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/>Python面向对象</a><a class="tag" href=/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85%E6%A1%88%E4%BE%8B-ii/>面向对象封装案例 II</a></section><section class="article navigation"><p><a class="link" href="/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-04_%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85%E6%A1%88%E4%BE%8B/"><span class="li">&larr;</span>Python面向对象-04-面向对象封装案例</a></p><p><a class="link" href="/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-06_%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/"><span class="li">&rarr;</span>Python面向对象-06-私有属性和私有方法</a class="link">
+    </p></section></div><section id="footer" class="footer">
+    <script src="https://utteranc.es/client.js"
+        repo="ChuWeiEr/hugoblogtalks"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

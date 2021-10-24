@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>继承 on Wei Chu</title>
+    <link>/tags/%E7%BB%A7%E6%89%BF/</link>
+    <description>Recent content in 继承 on Wei Chu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>©2020 Notepadium.</copyright>
+    <lastBuildDate>Fri, 22 Oct 2021 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/%E7%BB%A7%E6%89%BF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python面向对象-09-继承</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-09_%E7%BB%A7%E6%89%BF/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-09_%E7%BB%A7%E6%89%BF/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

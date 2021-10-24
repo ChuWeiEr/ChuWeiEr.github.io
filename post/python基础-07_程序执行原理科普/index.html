@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.86.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Python基础-07-程序执行原理&nbsp;&ndash;&nbsp;Wei Chu</title><link rel="stylesheet" href="/css/core.min.746d4f5e0f69f8ca3fdabdfef6b99d63a9852de221102d14b47177e2a4e0fb979941c84b1ae5b6a490e592140624482e.css" integrity="sha384-dG1PXg9p&#43;Mo/2r3&#43;9rmdY6mFLeIhEC0UtHF34qTg&#43;5eZQchLGuW2pJDlkhQGJEgu"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Wei Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Python基础-07-程序执行原理</h1><p class="article date">Oct 22, 2021<span class="reading-time"> • 3 minutes to read</span></p></section><article class="article markdown-body"><h1 id="程序执行原理科普">程序执行原理（科普）</h1>
+<h2 id="目标">目标</h2>
+<ul>
+<li>计算机中的 <strong>三大件</strong></li>
+<li>程序执行的原理</li>
+<li>程序的作用</li>
+</ul>
+<h2 id="01-计算机中的三大件">01. 计算机中的三大件</h2>
+<p>计算机中包含有较多的硬件，但是一个程序要运行，有 <strong>三个</strong> 核心的硬件，分别是：</p>
+<ol>
+<li><strong>CPU</strong>
+<ul>
+<li>中央处理器，是一块超大规模的集成电路</li>
+<li>负责 <strong>处理数据</strong>／<strong>计算</strong></li>
+</ul>
+</li>
+<li><strong>内存</strong>
+<ul>
+<li><strong>临时</strong> 存储数据（断电之后，数据会消失）</li>
+<li>速度快</li>
+<li>空间小（单位价格高）</li>
+</ul>
+</li>
+<li><strong>硬盘</strong>
+<ul>
+<li><strong>永久</strong> 存储数据</li>
+<li>速度慢</li>
+<li>空间大（单位价格低）</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">CPU</th>
+<th style="text-align:center">内存</th>
+<th style="text-align:center">硬盘</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a target="_blank" rel="noopener noreferrer" 
+  href="media/14951694921910/CPU.jpg"><img  src="media/14951694921910/CPU.jpg"
+        alt="CPU-w200"/></a></td>
+<td style="text-align:center"><a target="_blank" rel="noopener noreferrer" 
+  href="media/14951694921910/%E5%86%85%E5%AD%98%E6%9D%A1.png"><img  src="media/14951694921910/%E5%86%85%E5%AD%98%E6%9D%A1.png"
+        alt="内存条-w200"/></a></td>
+<td style="text-align:center"><a target="_blank" rel="noopener noreferrer" 
+  href="media/14951694921910/%E7%A1%AC%E7%9B%98.jpg"><img  src="media/14951694921910/%E7%A1%AC%E7%9B%98.jpg"
+        alt="硬盘-w200"/></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="思考题">思考题</h3>
+<ol>
+<li>计算机中哪一个硬件设备负责执行程序？
+<ul>
+<li><strong>CPU</strong></li>
+</ul>
+</li>
+<li><strong>内存</strong> 的速度快还是 <strong>硬盘</strong> 的速度快？
+<ul>
+<li><strong>内存</strong></li>
+</ul>
+</li>
+<li>我们的程序是安装在内存中的，还是安装在硬盘中的？
+<ul>
+<li>硬盘</li>
+</ul>
+</li>
+<li><strong>我买了一个内存条，有 500G 的空间！！！</strong>，这句话对吗？
+<ul>
+<li>不对，内存条通常只有 <code>4G</code> / <code>8G</code> / <code>16G</code> / <code>32G</code></li>
+</ul>
+</li>
+<li><strong>计算机关机之后，内存中的数据都会消失</strong>，这句话对吗？
+<ul>
+<li>正确</li>
+</ul>
+</li>
+</ol>
+<h2 id="02-程序执行的原理">02. 程序执行的原理</h2>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="media/14951694921910/001_%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E7%A4%BA%E6%84%8F%E5%9B%BE.png"><img  src="media/14951694921910/001_%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E7%A4%BA%E6%84%8F%E5%9B%BE.png"
+        alt="001_程序执行示意图-w"/></a></p>
+<ol>
+<li>程序 <strong>运行之前</strong>，程序是 <strong>保存在硬盘</strong> 中的</li>
+<li>当要运行一个程序时
+<ul>
+<li>操作系统会首先让 <strong>CPU</strong> 把程序复制到 <strong>内存</strong> 中</li>
+<li><strong>CPU</strong> 执行 <strong>内存</strong> 中的 <strong>程序代码</strong></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><strong>程序要执行，首先要被加载到内存</strong></p>
+</blockquote>
+<h3 id="21-python-程序执行原理">2.1 Python 程序执行原理</h3>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="media/14951694921910/003_Python%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E7%A4%BA%E6%84%8F%E5%9B%BE.png"><img  src="media/14951694921910/003_Python%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E7%A4%BA%E6%84%8F%E5%9B%BE.png"
+        alt="003_Python程序执行示意图"/></a></p>
+<ol>
+<li>操作系统会首先让 <strong>CPU</strong> 把 <strong>Python 解释器</strong> 的程序复制到 <strong>内存</strong> 中</li>
+<li><strong>Python 解释器</strong> 根据语法规则，<strong>从上向下</strong> 让 <strong>CPU</strong> 翻译 <strong>Python 程序中的代码</strong></li>
+<li><strong>CPU</strong> 负责执行翻译完成的代码</li>
+</ol>
+<h4 id="python-的解释器有多大">Python 的解释器有多大？</h4>
+<ul>
+<li>执行以下终端命令可以查看 Python 解释器的大小</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 1. 确认解释器所在位置</span>
+$ which python
+
+<span class="c1"># 2. 查看 python 文件大小(只是一个软链接)</span>
+$ ls -lh /usr/bin/python
+
+<span class="c1"># 3. 查看具体文件大小</span>
+$ ls -lh /usr/bin/python2.7
+</code></pre></div><blockquote>
+<p>提示：建立 <strong>软链接</strong> 的目的，是为了方便使用者不用记住使用的解释器是 <strong>哪一个具体版本</strong></p>
+</blockquote>
+<h2 id="03-程序的作用">03. 程序的作用</h2>
+<blockquote>
+<p>程序就是 <strong>用来处理数据</strong> 的！</p>
+</blockquote>
+<ul>
+<li><strong>新闻软件</strong> 提供的 <strong>新闻内容、评论……</strong> 是数据</li>
+<li><strong>电商软件</strong> 提供的 <strong>商品信息、配送信息……</strong> 是数据</li>
+<li><strong>运动类软件</strong> 提供的 <strong>运动数据……</strong> 是数据</li>
+<li><strong>地图类软件</strong> 提供的 <strong>地图信息、定位信息、车辆信息……</strong> 是数据</li>
+<li><strong>即时通讯软件</strong> 提供的 <strong>聊天信息、好友信息……</strong> 是数据</li>
+<li>……</li>
+</ul>
+<h3 id="31-思考-qq-程序的启动过程">3.1 思考 QQ 程序的启动过程</h3>
+<ol>
+<li>QQ 在<strong>运行之前</strong>，是保存在 <strong>硬盘</strong> 中的</li>
+<li><strong>运行之后</strong>，QQ 程序就会被加载到 <strong>内存</strong> 中了</li>
+</ol>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="media/14951694921910/003_QQ%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png"><img  src="media/14951694921910/003_QQ%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png"
+        alt="003_QQ登陆界面-w248"/></a></p>
+<h3 id="32-思考-qq-程序的-登录-过程">3.2 思考 QQ 程序的 <strong>登录</strong> 过程</h3>
+<ol>
+<li>读取用户输入的 <strong>QQ 号码</strong></li>
+<li>读取用户输入的 <strong>QQ 密码</strong></li>
+<li>将 <strong>QQ 号码</strong> 和 <strong>QQ 密码</strong> 发送给腾讯的服务器，等待服务器确认用户信息</li>
+</ol>
+<h4 id="思考-1">思考 1</h4>
+<blockquote>
+<p>在 QQ 这个程序将 <strong>QQ 号码</strong> 和 <strong>QQ 密码</strong> 发送给服务器之前，<strong>是否需要先存储一下 QQ 号码 和 密码?</strong></p>
+</blockquote>
+<p><strong>答案</strong></p>
+<p>肯定需要！—— 否则 QQ 这个程序就不知道把什么内容发送给服务器了！</p>
+<h4 id="思考-2">思考 2</h4>
+<blockquote>
+<p>QQ 这个程序把 <strong>QQ 号码</strong> 和 <strong>QQ 密码</strong> 保存在哪里？</p>
+</blockquote>
+<p><strong>答案</strong></p>
+<p>保存在 <strong>内存</strong> 中，因为 QQ 程序自己就在内存中</p>
+<h4 id="思考-3">思考 3</h4>
+<blockquote>
+<p>QQ 这个程序是怎么保存用户的 <strong>QQ 号码</strong> 和 <strong>QQ 密码</strong> 的？</p>
+</blockquote>
+<p><strong>答案</strong></p>
+<ol>
+<li>在内存中为 <strong>QQ 号码</strong> 和 <strong>QQ 密码</strong> 各自分配一块空间
+<ul>
+<li>在 QQ 程序结束之前，这两块空间是由 QQ 程序负责管理的，其他任何程序都不允许使用</li>
+<li>在 QQ 自己使用完成之前，这两块空间始终都只负责保存 <strong>QQ 号码</strong> 和 <strong>QQ 密码</strong></li>
+</ul>
+</li>
+<li>使用一个 <strong>别名</strong> 标记 <strong>QQ 号码</strong> 和 <strong>QQ 密码</strong> 在内存中的位置</li>
+</ol>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="media/14951694921910/004_QQ%E5%8F%B7%E7%A0%81%E5%92%8C%E5%AF%86%E7%A0%81%E5%86%85%E5%AD%98%E7%A4%BA%E6%84%8F%E5%9B%BE.png"><img  src="media/14951694921910/004_QQ%E5%8F%B7%E7%A0%81%E5%92%8C%E5%AF%86%E7%A0%81%E5%86%85%E5%AD%98%E7%A4%BA%E6%84%8F%E5%9B%BE.png"
+        alt="004_QQ号码和密码内存示意图"/></a></p>
+<blockquote>
+<ul>
+<li>在程序内部，为 <strong>QQ 号码</strong> 和 <strong>QQ 密码</strong> 在内存中分配的空间就叫做 <strong>变量</strong></li>
+<li><strong>程序就是用来处理数据的，而变量就是用来存储数据的</strong></li>
+</ul>
+</blockquote></article><section class="article labels"><a class="category" href=/categories/python%E5%9F%BA%E7%A1%80/>Python基础</a><a class="tag" href=/tags/%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86/>程序执行原理</a></section><section class="article navigation"><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-06_%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6/"><span class="li">&larr;</span>Python基础-06-算数运算符</a></p><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-08_%E5%8F%98%E9%87%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"><span class="li">&rarr;</span>Python基础-08-变量的基本使用</a class="link">
+    </p></section></div><section id="footer" class="footer">
+    <script src="https://utteranc.es/client.js"
+        repo="ChuWeiEr/hugoblogtalks"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

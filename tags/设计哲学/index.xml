@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>设计哲学 on Wei Chu</title>
+    <link>/tags/%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6/</link>
+    <description>Recent content in 设计哲学 on Wei Chu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>©2020 Notepadium.</copyright>
+    <lastBuildDate>Fri, 22 Oct 2021 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python基础-01-认识 Python</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-01-%E8%AE%A4%E8%AF%86-python/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-01-%E8%AE%A4%E8%AF%86-python/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

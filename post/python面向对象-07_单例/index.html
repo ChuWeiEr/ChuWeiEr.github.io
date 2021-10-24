@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.86.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Python面向对象-07-单例&nbsp;&ndash;&nbsp;Wei Chu</title><link rel="stylesheet" href="/css/core.min.746d4f5e0f69f8ca3fdabdfef6b99d63a9852de221102d14b47177e2a4e0fb979941c84b1ae5b6a490e592140624482e.css" integrity="sha384-dG1PXg9p&#43;Mo/2r3&#43;9rmdY6mFLeIhEC0UtHF34qTg&#43;5eZQchLGuW2pJDlkhQGJEgu"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Wei Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Python面向对象-07-单例</h1><p class="article date">Oct 22, 2021<span class="reading-time"> • 2 minutes to read</span></p></section><article class="article markdown-body"><h1 id="单例">单例</h1>
+<h2 id="目标">目标</h2>
+<ul>
+<li>单例设计模式</li>
+<li><code>__new__</code> 方法</li>
+<li>Python 中的单例</li>
+</ul>
+<h2 id="01-单例设计模式">01. 单例设计模式</h2>
+<ul>
+<li>
+<p>设计模式</p>
+<ul>
+<li><strong>设计模式</strong> 是 <strong>前人工作的总结和提炼</strong>，通常，被人们广泛流传的设计模式都是针对 <strong>某一特定问题</strong> 的成熟的解决方案</li>
+<li>使用 <strong>设计模式</strong> 是为了可重用代码、让代码更容易被他人理解、保证代码可靠性</li>
+</ul>
+</li>
+<li>
+<p>单例设计模式</p>
+<ul>
+<li><strong>目的</strong> —— 让 <strong>类</strong> 创建的对象，在系统中 <strong>只有</strong> <strong>唯一的一个实例</strong></li>
+<li>每一次执行 <code>类名()</code> 返回的对象，<strong>内存地址是相同的</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="单例设计模式的应用场景">单例设计模式的应用场景</h3>
+<ul>
+<li><strong>音乐播放</strong> 对象</li>
+<li><strong>回收站</strong> 对象</li>
+<li><strong>打印机</strong> 对象</li>
+<li>……</li>
+</ul>
+<h2 id="02-__new__-方法">02. <code>__new__</code> 方法</h2>
+<ul>
+<li>使用 <strong>类名()</strong> 创建对象时，<code>Python</code> 的解释器 <strong>首先</strong> 会 调用 <code>__new__</code> 方法为对象 <strong>分配空间</strong></li>
+<li><code>__new__</code> 是一个 由 <code>object</code> 基类提供的 <strong>内置的静态方法</strong>，主要作用有两个：
+<ul>
+<li>
+<ol>
+<li>在内存中为对象 <strong>分配空间</strong></li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li><strong>返回</strong> 对象的引用</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><code>Python</code> 的解释器获得对象的 <strong>引用</strong> 后，将引用作为 <strong>第一个参数</strong>，传递给 <code>__init__</code> 方法</li>
+</ul>
+<blockquote>
+<p>重写 <code>__new__</code> 方法 的代码非常固定！</p>
+</blockquote>
+<ul>
+<li>重写 <code>__new__</code> 方法 <strong>一定要</strong> <code>return super().__new__(cls)</code></li>
+<li>否则 Python 的解释器 <strong>得不到</strong> 分配了空间的 <strong>对象引用</strong>，<strong>就不会调用对象的初始化方法</strong></li>
+<li>注意：<code>__new__</code> 是一个静态方法，在调用时需要 <strong>主动传递</strong> <code>cls</code> 参数</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="media/15016413216376/022_%E5%AF%B9%E8%B1%A1%E5%88%86%E9%85%8D%E7%A9%BA%E9%97%B4%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96.png"><img  src="media/15016413216376/022_%E5%AF%B9%E8%B1%A1%E5%88%86%E9%85%8D%E7%A9%BA%E9%97%B4%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96.png"
+        alt="022_对象分配空间和初始化-w838"/></a></p>
+<p><strong>示例代码</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">MusicPlayer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># 如果不返回任何结果，</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;初始化音乐播放对象&#34;</span><span class="p">)</span>
+
+<span class="n">player</span> <span class="o">=</span> <span class="n">MusicPlayer</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+
+</code></pre></div><h2 id="03-python-中的单例">03. Python 中的单例</h2>
+<ul>
+<li><strong>单例</strong> —— 让 <strong>类</strong> 创建的对象，在系统中 <strong>只有</strong> <strong>唯一的一个实例</strong>
+<ol>
+<li>定义一个 <strong>类属性</strong>，初始值是 <code>None</code>，用于记录 <strong>单例对象的引用</strong></li>
+<li>重写 <code>__new__</code> 方法</li>
+<li>如果 <strong>类属性</strong> <code>is None</code>，调用父类方法分配空间，并在类属性中记录结果</li>
+<li>返回 <strong>类属性</strong> 中记录的 <strong>对象引用</strong></li>
+</ol>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="media/15016413216376/023_%E5%8D%95%E4%BE%8B%E6%B5%81%E7%A8%8B.png"><img  src="media/15016413216376/023_%E5%8D%95%E4%BE%8B%E6%B5%81%E7%A8%8B.png"
+        alt="023_单例流程-w893"/></a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">MusicPlayer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="c1"># 定义类属性记录单例对象引用</span>
+    <span class="n">instance</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="c1"># 1. 判断类属性是否已经被赋值</span>
+        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+
+        <span class="c1"># 2. 返回类属性的单例引用</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">instance</span>
+
+</code></pre></div><h3 id="只执行一次初始化工作">只执行一次初始化工作</h3>
+<ul>
+<li>在每次使用 <code>类名()</code> 创建对象时，<code>Python</code> 的解释器都会自动调用两个方法：
+<ul>
+<li><code>__new__</code> 分配空间</li>
+<li><code>__init__</code> 对象初始化</li>
+</ul>
+</li>
+<li>在上一小节对 <code>__new__</code> 方法改造之后，每次都会得到 <strong>第一次被创建对象的引用</strong></li>
+<li>但是：<strong>初始化方法还会被再次调用</strong></li>
+</ul>
+<p><strong>需求</strong></p>
+<ul>
+<li>让 <strong>初始化动作</strong> 只被 <strong>执行一次</strong></li>
+</ul>
+<p><strong>解决办法</strong></p>
+<ol>
+<li>定义一个类属性 <code>init_flag</code> 标记是否 <strong>执行过初始化动作</strong>，初始值为 <code>False</code></li>
+<li>在 <code>__init__</code> 方法中，判断 <code>init_flag</code>，如果为 <code>False</code> 就执行初始化动作</li>
+<li>然后将 <code>init_flag</code> 设置为 <code>True</code></li>
+<li>这样，再次 <strong>自动</strong> 调用 <code>__init__</code> 方法时，<strong>初始化动作就不会被再次执行</strong> 了</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">MusicPlayer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="c1"># 记录第一个被创建对象的引用</span>
+    <span class="n">instance</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># 记录是否执行过初始化动作</span>
+    <span class="n">init_flag</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="c1"># 1. 判断类属性是否是空对象</span>
+        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># 2. 调用父类的方法，为第一个对象分配空间</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+
+        <span class="c1"># 3. 返回类属性保存的对象引用</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">instance</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">MusicPlayer</span><span class="o">.</span><span class="n">init_flag</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;初始化音乐播放器&#34;</span><span class="p">)</span>
+
+            <span class="n">MusicPlayer</span><span class="o">.</span><span class="n">init_flag</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<span class="c1"># 创建多个对象</span>
+<span class="n">player1</span> <span class="o">=</span> <span class="n">MusicPlayer</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">player1</span><span class="p">)</span>
+
+<span class="n">player2</span> <span class="o">=</span> <span class="n">MusicPlayer</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">player2</span><span class="p">)</span>
+
+</code></pre></div></article><section class="article labels"><a class="category" href=/categories/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/>Python面向对象</a><a class="tag" href=/tags/%E5%8D%95%E4%BE%8B/>单例</a></section><section class="article navigation"><p><a class="link" href="/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-06_%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/"><span class="li">&larr;</span>Python面向对象-06-私有属性和私有方法</a></p><p><a class="link" href="/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-08_%E5%A4%9A%E6%80%81/"><span class="li">&rarr;</span>Python面向对象-08-多态</a class="link">
+    </p></section></div><section id="footer" class="footer">
+    <script src="https://utteranc.es/client.js"
+        repo="ChuWeiEr/hugoblogtalks"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

@@ -7,10 +7,379 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 Notepadium.</copyright>
-    <lastBuildDate>Wed, 06 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Oct 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux基础-Linux 终端命令格式</title>
+      <link>/post/linux-linux-%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-linux-%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-其他命令</title>
+      <link>/post/linux-%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-常用 Linux 命令的基本使用</title>
+      <link>/post/linux-%E5%B8%B8%E7%94%A8-linux-%E5%91%BD%E4%BB%A4%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E5%B8%B8%E7%94%A8-linux-%E5%91%BD%E4%BB%A4%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-操作系统的发展史（科普章节）</title>
+      <link>/post/linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E5%8F%B2%E7%A7%91%E6%99%AE%E7%AB%A0%E8%8A%82/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E5%8F%B2%E7%A7%91%E6%99%AE%E7%AB%A0%E8%8A%82/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-操作系统（科普章节）</title>
+      <link>/post/linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%A7%91%E6%99%AE%E7%AB%A0%E8%8A%82/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%A7%91%E6%99%AE%E7%AB%A0%E8%8A%82/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-文件和目录</title>
+      <link>/post/linux-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%90%86%E8%A7%A3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-文件和目录常用命令</title>
+      <link>/post/linux-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-用户权限相关命令</title>
+      <link>/post/linux-%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-系统信息相关命令</title>
+      <link>/post/linux-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-远程管理常用命令</title>
+      <link>/post/linux-%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-01-认识 Python</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-01-%E8%AE%A4%E8%AF%86-python/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-01-%E8%AE%A4%E8%AF%86-python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-02-第一个 Python 程序</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-02_%E7%AC%AC%E4%B8%80%E4%B8%AA-python-%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-02_%E7%AC%AC%E4%B8%80%E4%B8%AA-python-%E7%A8%8B%E5%BA%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-03-PyCharm 的初始设置</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-03-pycharm-%E7%9A%84%E5%88%9D%E5%A7%8B%E8%AE%BE%E7%BD%AE%E7%9F%A5%E9%81%93/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-03-pycharm-%E7%9A%84%E5%88%9D%E5%A7%8B%E8%AE%BE%E7%BD%AE%E7%9F%A5%E9%81%93/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-04-多文件项目的演练</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-04_%E5%A4%9A%E6%96%87%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%BC%94%E7%BB%83/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-04_%E5%A4%9A%E6%96%87%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%BC%94%E7%BB%83/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-05-注释</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-05_%E6%B3%A8%E9%87%8A/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-05_%E6%B3%A8%E9%87%8A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-06-算数运算符</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-06_%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-06_%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-07-程序执行原理</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-07_%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86%E7%A7%91%E6%99%AE/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-07_%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86%E7%A7%91%E6%99%AE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-08-变量的基本使用</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-08_%E5%8F%98%E9%87%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-08_%E5%8F%98%E9%87%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-09-变量的命名</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-09_%E5%8F%98%E9%87%8F%E7%9A%84%E5%91%BD%E5%90%8D/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-09_%E5%8F%98%E9%87%8F%E7%9A%84%E5%91%BD%E5%90%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-10-判断（if）语句</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-10_%E5%88%A4%E6%96%ADif%E8%AF%AD%E5%8F%A5/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-10_%E5%88%A4%E6%96%ADif%E8%AF%AD%E5%8F%A5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-11-运算符</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-11_%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-11_%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-12-循环</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-12_%E5%BE%AA%E7%8E%AF/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-12_%E5%BE%AA%E7%8E%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-13-函数基础</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-13-%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-13-%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-14-高级变量类型</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-14-%E9%AB%98%E7%BA%A7%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-14-%E9%AB%98%E7%BA%A7%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-15-变量进阶</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-15-%E5%8F%98%E9%87%8F%E8%BF%9B%E9%98%B6%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-15-%E5%8F%98%E9%87%8F%E8%BF%9B%E9%98%B6%E7%90%86%E8%A7%A3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础-16-函数进阶</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-16-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-16-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python综合应用 —— 名片管理系统</title>
+      <link>/post/%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-%E5%90%8D%E7%89%87%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-%E5%90%8D%E7%89%87%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-01-面向对象(OOP)基本概念</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-01_%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1oop%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-01_%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1oop%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-02-类和对象</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-02_%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-02_%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-03-面相对象基础语法</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-03_%E9%9D%A2%E7%9B%B8%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-03_%E9%9D%A2%E7%9B%B8%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-04-面向对象封装案例</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-04_%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85%E6%A1%88%E4%BE%8B/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-04_%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85%E6%A1%88%E4%BE%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-05-面向对象封装案例 II</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-05_%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85%E6%A1%88%E4%BE%8B-ii/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-05_%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85%E6%A1%88%E4%BE%8B-ii/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-06-私有属性和私有方法</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-06_%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-06_%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-07-单例</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-07_%E5%8D%95%E4%BE%8B/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-07_%E5%8D%95%E4%BE%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-08-多态</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-08_%E5%A4%9A%E6%80%81/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-08_%E5%A4%9A%E6%80%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-09-继承</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-09_%E7%BB%A7%E6%89%BF/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-09_%E7%BB%A7%E6%89%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-10-类属性和类方法</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-10_%E7%B1%BB%E5%B1%9E%E6%80%A7%E5%92%8C%E7%B1%BB%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-10_%E7%B1%BB%E5%B1%9E%E6%80%A7%E5%92%8C%E7%B1%BB%E6%96%B9%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-11-`eval` 函数</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-11_eval%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-11_eval%E5%87%BD%E6%95%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-12-模块和包</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-12_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-12_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-13-文件</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-13_%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-13_%E6%96%87%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python面向对象-14-异常</title>
+      <link>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-14_%E5%BC%82%E5%B8%B8/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-14_%E5%BC%82%E5%B8%B8/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>亲密关系-第二章：研究方法</title>

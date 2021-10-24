@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PyCharm on Wei Chu</title>
+    <link>/tags/pycharm/</link>
+    <description>Recent content in PyCharm on Wei Chu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>©2020 Notepadium.</copyright>
+    <lastBuildDate>Fri, 22 Oct 2021 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/pycharm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python基础-03-PyCharm 的初始设置</title>
+      <link>/post/python%E5%9F%BA%E7%A1%80-03-pycharm-%E7%9A%84%E5%88%9D%E5%A7%8B%E8%AE%BE%E7%BD%AE%E7%9F%A5%E9%81%93/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python%E5%9F%BA%E7%A1%80-03-pycharm-%E7%9A%84%E5%88%9D%E5%A7%8B%E8%AE%BE%E7%BD%AE%E7%9F%A5%E9%81%93/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

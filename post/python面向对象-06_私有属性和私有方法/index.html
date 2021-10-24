@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.86.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Python面向对象-06-私有属性和私有方法&nbsp;&ndash;&nbsp;Wei Chu</title><link rel="stylesheet" href="/css/core.min.746d4f5e0f69f8ca3fdabdfef6b99d63a9852de221102d14b47177e2a4e0fb979941c84b1ae5b6a490e592140624482e.css" integrity="sha384-dG1PXg9p&#43;Mo/2r3&#43;9rmdY6mFLeIhEC0UtHF34qTg&#43;5eZQchLGuW2pJDlkhQGJEgu"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Wei Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Python面向对象-06-私有属性和私有方法</h1><p class="article date">Oct 22, 2021<span class="reading-time"> • One minute to read</span></p></section><article class="article markdown-body"><h1 id="私有属性和私有方法">私有属性和私有方法</h1>
+<h2 id="01-应用场景及定义方式">01. 应用场景及定义方式</h2>
+<p><strong>应用场景</strong></p>
+<ul>
+<li>在实际开发中，<strong>对象</strong> 的 <strong>某些属性或方法</strong> 可能只希望 <strong>在对象的内部被使用</strong>，而 <strong>不希望在外部被访问到</strong></li>
+<li><strong>私有属性</strong> 就是 <strong>对象</strong> 不希望公开的 <strong>属性</strong></li>
+<li><strong>私有方法</strong> 就是 <strong>对象</strong> 不希望公开的 <strong>方法</strong></li>
+</ul>
+<p><strong>定义方式</strong></p>
+<ul>
+<li>在 <strong>定义属性或方法时</strong>，在 <strong>属性名或者方法名前</strong> 增加 <strong>两个下划线</strong>，定义的就是 <strong>私有</strong> 属性或方法</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="media/15006305884400/010_%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95.png"><img  src="media/15006305884400/010_%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95.png"
+        alt="010_私有属性和方法-w265"/></a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Women</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="c1"># 不要问女生的年龄</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__age</span> <span class="o">=</span> <span class="mi">18</span>
+
+    <span class="k">def</span> <span class="nf">__secret</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;我的年龄是 </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">__age</span><span class="p">)</span>
+
+
+<span class="n">xiaofang</span> <span class="o">=</span> <span class="n">Women</span><span class="p">(</span><span class="s2">&#34;小芳&#34;</span><span class="p">)</span>
+<span class="c1"># 私有属性，外部不能直接访问</span>
+<span class="c1"># print(xiaofang.__age)</span>
+
+<span class="c1"># 私有方法，外部不能直接调用</span>
+<span class="c1"># xiaofang.__secret()</span>
+
+</code></pre></div><h2 id="02-伪私有属性和私有方法科普">02. 伪私有属性和私有方法（科普）</h2>
+<blockquote>
+<p>提示：在日常开发中，<strong>不要使用这种方式</strong>，<strong>访问对象的 私有属性 或 私有方法</strong></p>
+</blockquote>
+<p><code>Python</code> 中，并没有 <strong>真正意义</strong> 的 <strong>私有</strong></p>
+<ul>
+<li>在给 <strong>属性</strong>、<strong>方法</strong> 命名时，实际是对 <strong>名称</strong> 做了一些特殊处理，使得外界无法访问到</li>
+<li><strong>处理方式</strong>：在 <strong>名称</strong> 前面加上 <code>_类名</code> =&gt; <code>_类名__名称</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 私有属性，外部不能直接访问到</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xiaofang</span><span class="o">.</span><span class="n">_Women__age</span><span class="p">)</span>
+
+<span class="c1"># 私有方法，外部不能直接调用</span>
+<span class="n">xiaofang</span><span class="o">.</span><span class="n">_Women__secret</span><span class="p">()</span>
+
+</code></pre></div></article><section class="article labels"><a class="category" href=/categories/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/>Python面向对象</a><a class="tag" href=/tags/%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/>私有属性和私有方法</a></section><section class="article navigation"><p><a class="link" href="/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-05_%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85%E6%A1%88%E4%BE%8B-ii/"><span class="li">&larr;</span>Python面向对象-05-面向对象封装案例 II</a></p><p><a class="link" href="/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-07_%E5%8D%95%E4%BE%8B/"><span class="li">&rarr;</span>Python面向对象-07-单例</a class="link">
+    </p></section></div><section id="footer" class="footer">
+    <script src="https://utteranc.es/client.js"
+        repo="ChuWeiEr/hugoblogtalks"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.86.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Python基础-09-变量的命名&nbsp;&ndash;&nbsp;Wei Chu</title><link rel="stylesheet" href="/css/core.min.746d4f5e0f69f8ca3fdabdfef6b99d63a9852de221102d14b47177e2a4e0fb979941c84b1ae5b6a490e592140624482e.css" integrity="sha384-dG1PXg9p&#43;Mo/2r3&#43;9rmdY6mFLeIhEC0UtHF34qTg&#43;5eZQchLGuW2pJDlkhQGJEgu"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Wei Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Python基础-09-变量的命名</h1><p class="article date">Oct 22, 2021<span class="reading-time"> • 2 minutes to read</span></p></section><article class="article markdown-body"><h1 id="变量的命名">变量的命名</h1>
+<h2 id="目标">目标</h2>
+<ul>
+<li>标识符和关键字</li>
+<li>变量的命名规则</li>
+</ul>
+<h2 id="01-标识符和关键字">0.1 标识符和关键字</h2>
+<h3 id="11-标识符">1.1 标识符</h3>
+<blockquote>
+<p>标示符就是程序员定义的 <strong>变量名</strong>、<strong>函数名</strong></p>
+<p><strong>名字</strong> 需要有 <strong>见名知义</strong> 的效果，见下图：</p>
+</blockquote>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="media/14959601550115/001_%E4%B8%AD%E5%9B%BD%E5%B1%B1%E4%B8%9C%E6%89%BE%E8%93%9D%E7%BF%94.jpg"><img  src="media/14959601550115/001_%E4%B8%AD%E5%9B%BD%E5%B1%B1%E4%B8%9C%E6%89%BE%E8%93%9D%E7%BF%94.jpg"
+        alt="001_中国山东找蓝翔"/></a></p>
+<ul>
+<li>标示符可以由 <strong>字母</strong>、<strong>下划线</strong> 和 <strong>数字</strong> 组成</li>
+<li><strong>不能以数字开头</strong></li>
+<li><strong>不能与关键字重名</strong></li>
+</ul>
+<p>思考：下面的标示符哪些是正确的，哪些不正确为什么？</p>
+<pre><code>fromNo12
+from#12
+my_Boolean
+my-Boolean
+Obj2
+2ndObj
+myInt
+My_tExt
+_test
+test!32
+haha(da)tt
+jack_rose
+jack&amp;rose
+GUI
+G.U.I
+</code></pre><h3 id="12-关键字">1.2 关键字</h3>
+<ul>
+<li><strong>关键字</strong> 就是在 <code>Python</code> 内部已经使用的标识符</li>
+<li><strong>关键字</strong> 具有特殊的功能和含义</li>
+<li>开发者 <strong>不允许定义和关键字相同的名字的标示符</strong></li>
+</ul>
+<p>通过以下命令可以查看 <code>Python</code> 中的关键字</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">keyword</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="nb">print</span><span class="p">(</span><span class="n">keyword</span><span class="o">.</span><span class="n">kwlist</span><span class="p">)</span>
+</code></pre></div><blockquote>
+<p>提示：<strong>关键字的学习及使用</strong>，会在后面的课程中不断介绍</p>
+<ul>
+<li>
+<p><code>import</code> <strong>关键字</strong> 可以导入一个 <strong>“工具包”</strong></p>
+</li>
+<li>
+<p>在 <code>Python</code> 中不同的工具包，提供有不同的工具</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="02-变量的命名规则">02. 变量的命名规则</h2>
+<blockquote>
+<p><strong>命名规则</strong> 可以被视为一种 <strong>惯例</strong>，并无绝对与强制
+目的是为了 <strong>增加代码的识别和可读性</strong></p>
+</blockquote>
+<p><strong>注意</strong> <code>Python</code> 中的 <strong>标识符</strong> 是 <strong>区分大小写的</strong></p>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="media/14959601550115/002_%E6%A0%87%E8%AF%86%E7%AC%A6%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99.jpg"><img  src="media/14959601550115/002_%E6%A0%87%E8%AF%86%E7%AC%A6%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99.jpg"
+        alt="002_标识符区分大小写"/></a></p>
+<ol>
+<li>在定义变量时，为了保证代码格式，<code>=</code> 的左右应该各保留一个空格</li>
+<li>在 <code>Python</code> 中，如果 <strong>变量名</strong> 需要由 <strong>二个</strong> 或 <strong>多个单词</strong> 组成时，可以按照以下方式命名
+<ol>
+<li>每个单词都使用小写字母</li>
+<li>单词与单词之间使用 <strong><code>_</code>下划线</strong> 连接</li>
+</ol>
+<ul>
+<li>例如：<code>first_name</code>、<code>last_name</code>、<code>qq_number</code>、<code>qq_password</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="驼峰命名法">驼峰命名法</h3>
+<ul>
+<li>当 <strong>变量名</strong> 是由二个或多个单词组成时，还可以利用驼峰命名法来命名</li>
+<li><strong>小驼峰式命名法</strong>
+<ul>
+<li>第一个单词以小写字母开始，后续单词的首字母大写</li>
+<li>例如：<code>firstName</code>、<code>lastName</code></li>
+</ul>
+</li>
+<li><strong>大驼峰式命名法</strong>
+<ul>
+<li>每一个单词的首字母都采用大写字母</li>
+<li>例如：<code>FirstName</code>、<code>LastName</code>、<code>CamelCase</code></li>
+</ul>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="media/14959601550115/003_%E9%A9%BC%E5%B3%B0%E5%91%BD%E5%90%8D%E6%B3%95.jpg"><img  src="media/14959601550115/003_%E9%A9%BC%E5%B3%B0%E5%91%BD%E5%90%8D%E6%B3%95.jpg"
+        alt="003_驼峰命名法"/></a></p></article><section class="article labels"><a class="category" href=/categories/python%E5%9F%BA%E7%A1%80/>Python基础</a><a class="tag" href=/tags/%E5%8F%98%E9%87%8F/>变量</a></section><section class="article navigation"><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-08_%E5%8F%98%E9%87%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"><span class="li">&larr;</span>Python基础-08-变量的基本使用</a></p><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-10_%E5%88%A4%E6%96%ADif%E8%AF%AD%E5%8F%A5/"><span class="li">&rarr;</span>Python基础-10-判断（if）语句</a class="link">
+    </p></section></div><section id="footer" class="footer">
+    <script src="https://utteranc.es/client.js"
+        repo="ChuWeiEr/hugoblogtalks"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

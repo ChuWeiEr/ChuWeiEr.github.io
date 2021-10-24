@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.86.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Python基础-05-注释&nbsp;&ndash;&nbsp;Wei Chu</title><link rel="stylesheet" href="/css/core.min.746d4f5e0f69f8ca3fdabdfef6b99d63a9852de221102d14b47177e2a4e0fb979941c84b1ae5b6a490e592140624482e.css" integrity="sha384-dG1PXg9p&#43;Mo/2r3&#43;9rmdY6mFLeIhEC0UtHF34qTg&#43;5eZQchLGuW2pJDlkhQGJEgu"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Wei Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Python基础-05-注释</h1><p class="article date">Oct 22, 2021<span class="reading-time"> • 2 minutes to read</span></p></section><article class="article markdown-body"><h1 id="注释">注释</h1>
+<h2 id="目标">目标</h2>
+<ul>
+<li>注释的作用</li>
+<li>单行注释（行注释）</li>
+<li>多行注释（块注释）</li>
+</ul>
+<h2 id="01-注释的作用">01. 注释的作用</h2>
+<blockquote>
+<p>使用用自己熟悉的语言，在程序中对某些代码进行标注说明，增强程序的可读性</p>
+</blockquote>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="media/14957651506944/001_%E6%9C%AA%E4%BD%BF%E7%94%A8%E6%B3%A8%E9%87%8A%E7%9A%84python%E7%A8%8B%E5%BA%8F.gif"><img  src="media/14957651506944/001_%E6%9C%AA%E4%BD%BF%E7%94%A8%E6%B3%A8%E9%87%8A%E7%9A%84python%E7%A8%8B%E5%BA%8F.gif"
+        alt="001_未使用注释的python程序"/></a></p>
+<h2 id="02-单行注释行注释">02. 单行注释(行注释)</h2>
+<ul>
+<li>
+<p>以 <code>#</code> 开头，<code>#</code> 右边的所有东西都被当做说明文字，而不是真正要执行的程序，只起到辅助说明作用</p>
+</li>
+<li>
+<p>示例代码如下：</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 这是第一个单行注释</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;hello python&#34;</span><span class="p">)</span>
+</code></pre></div><blockquote>
+<p>为了保证代码的可读性，<code>#</code> 后面建议先添加一个空格，然后再编写相应的说明文字</p>
+</blockquote>
+<h3 id="在代码后面增加的单行注释">在代码后面增加的单行注释</h3>
+<ul>
+<li>
+<p>在程序开发时，同样可以使用 <code>#</code> 在代码的后面（旁边）增加说明性的文字</p>
+</li>
+<li>
+<p>但是，需要注意的是，<strong>为了保证代码的可读性</strong>，<strong>注释和代码之间</strong> 至少要有 <strong>两个空格</strong></p>
+</li>
+<li>
+<p>示例代码如下：</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;hello python&#34;</span><span class="p">)</span>  <span class="c1"># 输出 `hello python`</span>
+</code></pre></div><h2 id="03-多行注释块注释">03. 多行注释（块注释）</h2>
+<ul>
+<li>
+<p>如果希望编写的 <strong>注释信息很多，一行无法显示</strong>，就可以使用多行注释</p>
+</li>
+<li>
+<p>要在 Python 程序中使用多行注释，可以用 <strong>一对 连续的 三个 引号</strong>(单引号和双引号都可以)</p>
+</li>
+<li>
+<p>示例代码如下：</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="s2">&#34;&#34;&#34;
+</span><span class="s2">这是一个多行注释
+</span><span class="s2">
+</span><span class="s2">在多行注释之间，可以写很多很多的内容……
+</span><span class="s2">&#34;&#34;&#34;</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;hello python&#34;</span><span class="p">)</span>
+</code></pre></div><h3 id="什么时候需要使用注释">什么时候需要使用注释？</h3>
+<ol>
+<li><strong>注释不是越多越好</strong>，对于一目了然的代码，不需要添加注释</li>
+<li>对于 <strong>复杂的操作</strong>，应该在操作开始前写上若干行注释</li>
+<li>对于 <strong>不是一目了然的代码</strong>，应在其行尾添加注释（为了提高可读性，注释应该至少离开代码 2 个空格）</li>
+<li>绝不要描述代码，假设阅读代码的人比你更懂 Python，他只是不知道你的代码要做什么</li>
+</ol>
+<blockquote>
+<p>在一些正规的开发团队，通常会有 <strong>代码审核</strong> 的惯例，就是一个团队中彼此阅读对方的代码</p>
+</blockquote>
+<h3 id="关于代码规范">关于代码规范</h3>
+<ul>
+<li><code>Python</code> 官方提供有一系列 PEP（Python Enhancement Proposals） 文档</li>
+<li>其中第 8 篇文档专门针对 <strong>Python 的代码格式</strong> 给出了建议，也就是俗称的 <strong>PEP 8</strong></li>
+<li>文档地址：https://www.python.org/dev/peps/pep-0008/</li>
+<li>谷歌有对应的中文文档：http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/</li>
+</ul>
+<blockquote>
+<p>任何语言的程序员，编写出符合规范的代码，是开始程序生涯的第一步</p>
+</blockquote></article><section class="article labels"><a class="category" href=/categories/python%E5%9F%BA%E7%A1%80/>Python基础</a><a class="tag" href=/tags/%E6%B3%A8%E9%87%8A/>注释</a></section><section class="article navigation"><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-04_%E5%A4%9A%E6%96%87%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%BC%94%E7%BB%83/"><span class="li">&larr;</span>Python基础-04-多文件项目的演练</a></p><p><a class="link" href="/post/python%E5%9F%BA%E7%A1%80-06_%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6/"><span class="li">&rarr;</span>Python基础-06-算数运算符</a class="link">
+    </p></section></div><section id="footer" class="footer">
+    <script src="https://utteranc.es/client.js"
+        repo="ChuWeiEr/hugoblogtalks"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

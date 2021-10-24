@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux基础 on Wei Chu</title>
+    <link>/categories/linux%E5%9F%BA%E7%A1%80/</link>
+    <description>Recent content in Linux基础 on Wei Chu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>©2020 Notepadium.</copyright>
+    <lastBuildDate>Fri, 22 Oct 2021 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/linux%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux基础-Linux 终端命令格式</title>
+      <link>/post/linux-linux-%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-linux-%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-其他命令</title>
+      <link>/post/linux-%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-常用 Linux 命令的基本使用</title>
+      <link>/post/linux-%E5%B8%B8%E7%94%A8-linux-%E5%91%BD%E4%BB%A4%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E5%B8%B8%E7%94%A8-linux-%E5%91%BD%E4%BB%A4%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-操作系统的发展史（科普章节）</title>
+      <link>/post/linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E5%8F%B2%E7%A7%91%E6%99%AE%E7%AB%A0%E8%8A%82/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E5%8F%B2%E7%A7%91%E6%99%AE%E7%AB%A0%E8%8A%82/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-操作系统（科普章节）</title>
+      <link>/post/linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%A7%91%E6%99%AE%E7%AB%A0%E8%8A%82/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%A7%91%E6%99%AE%E7%AB%A0%E8%8A%82/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-文件和目录</title>
+      <link>/post/linux-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%90%86%E8%A7%A3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-文件和目录常用命令</title>
+      <link>/post/linux-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-用户权限相关命令</title>
+      <link>/post/linux-%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-系统信息相关命令</title>
+      <link>/post/linux-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux基础-远程管理常用命令</title>
+      <link>/post/linux-%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linux-%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

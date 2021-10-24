@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.86.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Linux基础-系统信息相关命令&nbsp;&ndash;&nbsp;Wei Chu</title><link rel="stylesheet" href="/css/core.min.746d4f5e0f69f8ca3fdabdfef6b99d63a9852de221102d14b47177e2a4e0fb979941c84b1ae5b6a490e592140624482e.css" integrity="sha384-dG1PXg9p&#43;Mo/2r3&#43;9rmdY6mFLeIhEC0UtHF34qTg&#43;5eZQchLGuW2pJDlkhQGJEgu"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Wei Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Linux基础-系统信息相关命令</h1><p class="article date">Oct 22, 2021<span class="reading-time"> • One minute to read</span></p></section><article class="article markdown-body"><h1 id="系统信息相关命令">系统信息相关命令</h1>
+<ul>
+<li>本节内容主要是为了方便通过远程终端维护服务器时，查看服务器上当前 <strong>系统日期和时间</strong> ／ <strong>磁盘空间占用情况</strong> ／ <strong>程序执行情况</strong></li>
+<li>本小结学习的终端命令基本都是查询命令，通过这些命令对系统资源的使用情况有个了解</li>
+</ul>
+<h2 id="目标">目标</h2>
+<ul>
+<li>时间和日期
+<ul>
+<li><code>date</code></li>
+<li><code>cal</code></li>
+</ul>
+</li>
+<li>磁盘和目录空间
+<ul>
+<li><code>df</code></li>
+<li><code>du</code></li>
+</ul>
+</li>
+<li>进程信息
+<ul>
+<li><code>ps</code></li>
+<li><code>top</code></li>
+<li><code>kill</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="01-时间和日期">01. 时间和日期</h2>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>date</td>
+<td>查看系统时间</td>
+</tr>
+<tr>
+<td>02</td>
+<td>cal</td>
+<td><code>calendar</code> 查看日历，<code>-y</code> 选项可以查看一年的日历</td>
+</tr>
+</tbody>
+</table>
+<h2 id="02-磁盘信息">02. 磁盘信息</h2>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>df -h</td>
+<td><code>disk free</code> 显示磁盘剩余空间</td>
+</tr>
+<tr>
+<td>02</td>
+<td>du -h [目录名]</td>
+<td><code>disk usage</code> 显示目录下的文件大小</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>选项说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-h</td>
+<td>以人性化的方式显示文件大小</td>
+</tr>
+</tbody>
+</table>
+<h2 id="03-进程信息">03. 进程信息</h2>
+<ul>
+<li>所谓 <strong>进程</strong>，通俗地说就是 <strong>当前正在执行的一个程序</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>ps aux</td>
+<td><code>process status</code> 查看进程的详细状况</td>
+</tr>
+<tr>
+<td>02</td>
+<td>top</td>
+<td>动态显示运行中的进程并且排序</td>
+</tr>
+<tr>
+<td>03</td>
+<td>kill [-9] 进程代号</td>
+<td>终止指定代号的进程，<code>-9</code> 表示强行终止</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>ps</code> 默认只会显示当前用户通过终端启动的应用程序</p>
+</blockquote>
+<ul>
+<li><code>ps</code> 选项说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>显示终端上的所有进程，包括其他用户的进程</td>
+</tr>
+<tr>
+<td>u</td>
+<td>显示进程的详细状态</td>
+</tr>
+<tr>
+<td>x</td>
+<td>显示没有控制终端的进程</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>提示：使用 <code>kill</code> 命令时，最好只终止由当前用户开启的进程，而不要终止 <code>root</code> 身份开启的进程，否则可能导致系统崩溃</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>要退出 <code>top</code> 可以直接输入 <code>q</code></li>
+</ul>
+</blockquote></article><section class="article labels"><a class="category" href=/categories/linux%E5%9F%BA%E7%A1%80/>Linux基础</a><a class="tag" href=/tags/%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF/>系统信息</a></section><section class="article navigation"><p><a class="link" href="/post/linux-%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/"><span class="li">&larr;</span>Linux基础-用户权限相关命令</a></p><p><a class="link" href="/post/linux-%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"><span class="li">&rarr;</span>Linux基础-远程管理常用命令</a class="link">
+    </p></section></div><section id="footer" class="footer">
+    <script src="https://utteranc.es/client.js"
+        repo="ChuWeiEr/hugoblogtalks"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>

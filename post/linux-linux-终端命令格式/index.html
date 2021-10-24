@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.86.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Linux基础-Linux 终端命令格式&nbsp;&ndash;&nbsp;Wei Chu</title><link rel="stylesheet" href="/css/core.min.746d4f5e0f69f8ca3fdabdfef6b99d63a9852de221102d14b47177e2a4e0fb979941c84b1ae5b6a490e592140624482e.css" integrity="sha384-dG1PXg9p&#43;Mo/2r3&#43;9rmdY6mFLeIhEC0UtHF34qTg&#43;5eZQchLGuW2pJDlkhQGJEgu"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Wei Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">Linux基础-Linux 终端命令格式</h1><p class="article date">Oct 22, 2021<span class="reading-time"> • One minute to read</span></p></section><article class="article markdown-body"><h1 id="linux-终端命令格式">Linux 终端命令格式</h1>
+<h2 id="目标">目标</h2>
+<ul>
+<li>了解终端命令格式</li>
+<li>知道如何查阅终端命令帮助信息</li>
+</ul>
+<h2 id="01-终端命令格式">01. 终端命令格式</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">command</span> <span class="o">[</span>-options<span class="o">]</span> <span class="o">[</span>parameter<span class="o">]</span>
+</code></pre></div><p>说明：</p>
+<ul>
+<li><code>command</code>：命令名，相应功能的英文单词或单词的缩写</li>
+<li><code>[-options]</code>：选项，可用来对命令进行控制，也可以省略</li>
+<li><code>parameter</code>：传给命令的参数，可以是 <strong>零个</strong>、<strong>一个</strong> 或者 <strong>多个</strong></li>
+</ul>
+<blockquote>
+<p><code>[]</code> 代表可选</p>
+</blockquote>
+<h2 id="02-查阅命令帮助信息知道">02. 查阅命令帮助信息（知道）</h2>
+<blockquote>
+<p>提示</p>
+<ul>
+<li>现阶段只需要 <strong>知道</strong> 通过以下两种方式可以查询命令的帮助信息</li>
+<li>先学习<strong>常用命令</strong>及<strong>常用选项</strong>的使用即可，工作中如果遇到问题可以借助 <strong>网络搜索</strong></li>
+</ul>
+</blockquote>
+<h3 id="21---help">2.1 <code>--help</code></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">command</span> --help
+</code></pre></div><p>说明：</p>
+<ul>
+<li>显示 <code>command</code> 命令的帮助信息</li>
+</ul>
+<h3 id="22-man">2.2 man</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">man <span class="nb">command</span>
+</code></pre></div><p>说明：</p>
+<ul>
+<li>查阅 <code>command</code> 命令的使用手册</li>
+</ul>
+<blockquote>
+<p><code>man</code> 是 <strong>manual</strong> 的缩写，是 Linux 提供的一个 <strong>手册</strong>，包含了绝大部分的命令、函数的详细使用说明</p>
+</blockquote>
+<p>使用 <code>man</code> 时的操作键：</p>
+<table>
+<thead>
+<tr>
+<th>操作键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>空格键</td>
+<td>显示手册页的下一屏</td>
+</tr>
+<tr>
+<td>Enter 键</td>
+<td>一次滚动手册页的一行</td>
+</tr>
+<tr>
+<td>b</td>
+<td>回滚一屏</td>
+</tr>
+<tr>
+<td>f</td>
+<td>前滚一屏</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>/word</td>
+<td>搜索 <strong>word</strong> 字符串</td>
+</tr>
+</tbody>
+</table></article><section class="article labels"><a class="category" href=/categories/linux%E5%9F%BA%E7%A1%80/>Linux基础</a><a class="tag" href=/tags/%E7%BB%88%E7%AB%AF/>终端</a></section><section class="article navigation"><p><a class="link" href="/post/linux-%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4/"><span class="li">&rarr;</span>Linux基础-其他命令</a class="link">
+    </p></section></div><section id="footer" class="footer">
+    <script src="https://utteranc.es/client.js"
+        repo="ChuWeiEr/hugoblogtalks"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>
