@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
-    <loc>https://chuweier.github.io/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/</loc><lastmod>2021-11-30T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/categories/</loc><lastmod>2021-11-30T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/post/</loc><lastmod>2021-11-30T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/tags/</loc><lastmod>2021-11-30T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/tags/%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95/</loc><lastmod>2021-11-30T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/tags/%E5%9B%9E%E5%BD%92%E5%92%8C%E8%81%9A%E7%B1%BB/</loc><lastmod>2021-11-30T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc><lastmod>2021-11-30T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A801/</loc><lastmod>2021-11-30T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A802/</loc><lastmod>2021-11-30T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A803/</loc><lastmod>2021-11-30T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/tags/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/</loc><lastmod>2021-11-30T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/tags/eval-%E5%87%BD%E6%95%B0/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
-    <loc>https://chuweier.github.io/categories/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/categories/linux%E5%9F%BA%E7%A1%80/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/post/linux-linux-%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/post/linux-%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
@@ -14,7 +23,6 @@
     <loc>https://chuweier.github.io/post/linux-%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/post/linux-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/post/linux-%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
-    <loc>https://chuweier.github.io/post/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/tags/pycharm/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/categories/python%E5%9F%BA%E7%A1%80/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/post/python%E5%9F%BA%E7%A1%80-01-%E8%AE%A4%E8%AF%86-python/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
@@ -50,7 +58,6 @@
     <loc>https://chuweier.github.io/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-12_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-13_%E6%96%87%E4%BB%B6/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/post/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-14_%E5%BC%82%E5%B8%B8/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
-    <loc>https://chuweier.github.io/tags/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/tags/%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/tags/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/tags/%E5%88%A4%E6%96%ADif/</loc><lastmod>2021-10-22T00:00:00+00:00</lastmod></url><url>
@@ -99,5 +106,9 @@
     <loc>https://chuweier.github.io/categories/%E7%BC%96%E8%BE%91%E5%99%A8/</loc><lastmod>2020-03-11T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/post/%E7%BC%96%E8%BE%91%E5%99%A8-01-jupyter-notebook/</loc><lastmod>2020-03-11T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/about/</loc><lastmod>2020-02-14T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/tags/git/</loc><lastmod>2020-02-01T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/tags/hugo/</loc><lastmod>2020-02-01T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/categories/web/</loc><lastmod>2020-02-01T00:00:00+00:00</lastmod></url><url>
+    <loc>https://chuweier.github.io/post/web%E4%B9%8Bgit%E4%B8%8Ehugo/</loc><lastmod>2020-02-01T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/tags/%E5%8F%A5%E5%AD%90/</loc><lastmod>2020-01-30T00:00:00+00:00</lastmod></url><url>
     <loc>https://chuweier.github.io/post/brave/</loc><lastmod>2020-01-30T00:00:00+00:00</lastmod></url></urlset>

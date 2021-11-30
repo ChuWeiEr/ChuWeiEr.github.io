@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.86.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>web之git与hugo&nbsp;&ndash;&nbsp;Wei Chu</title><link rel="stylesheet" href="/css/core.min.746d4f5e0f69f8ca3fdabdfef6b99d63a9852de221102d14b47177e2a4e0fb979941c84b1ae5b6a490e592140624482e.css" integrity="sha384-dG1PXg9p&#43;Mo/2r3&#43;9rmdY6mFLeIhEC0UtHF34qTg&#43;5eZQchLGuW2pJDlkhQGJEgu"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Wei Chu</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
+    <h1 class="article title">web之git与hugo</h1><p class="article date">Feb 01, 2020<span class="reading-time"> • 4 minutes to read</span></p></section><article class="article markdown-body"><h2 id="1-github简介">1. github简介</h2>
+<h3 id="11-目的托管项目代码">1.1 目的：托管项目代码</h3>
+<h3 id="12基本概念">1.2、基本概念</h3>
+<ul>
+<li>仓库repository</li>
+<li>收藏star</li>
+<li>复制克隆项目fork：将别人的仓库完整复制过来</li>
+<li>发起请求full request</li>
+<li>关注watch：关注项目，项目更新可以收到通知</li>
+<li>事物卡片issue：发现代码有bug，但是没有成型代码</li>
+<li>github主页
+<ul>
+<li>仓库主页：项目信息，项目代码，版本</li>
+<li>个人主页：个人信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-git安装和配置">2. git安装和配置</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 注意：以下操作是在ubuntu下进行！</span>
+<span class="c1"># 1. 安装git</span>
+<span class="n">Sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">git</span>
+
+<span class="c1"># 2. </span>
+<span class="n">git</span> <span class="n">remote</span> <span class="o">-</span><span class="n">v</span> <span class="n">origin</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ChuWeiEr</span><span class="o">/</span><span class="n">ChuWeiEr</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span>
+    
+<span class="c1"># 3. 设置</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="err">‘</span><span class="n">ChuWeiEr</span><span class="err">’</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="err">‘</span><span class="n">chuwei178</span><span class="o">@</span><span class="mf">163.</span><span class="n">com</span><span class="err">’</span>
+
+
+<span class="c1"># 4. 查看配置情况</span>
+<span class="n">git</span> <span class="n">config</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span>
+<span class="n">git</span> <span class="n">config</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span>
+<span class="c1"># 或者 </span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="nb">list</span>
+
+<span class="c1"># 5.SSH设置</span>
+<span class="c1"># 配置完成后，创建验证用的公钥</span>
+<span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">C</span> <span class="s1">&#39;chuwei178@163.com&#39;</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span>
+<span class="c1"># 然后 ls -a查看所有隐藏文件</span>
+<span class="n">gedit</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="o">.</span><span class="n">pub</span>
+<span class="c1"># 打开后复制文件内容，打开github主页，edit profiles ,</span>
+<span class="c1"># title随便填，内容粘贴刚刚复制的，点击add ssh key，</span>
+<span class="c1"># 测试ssh key是否成功，使用命令，如果通了证明成功了</span>
+<span class="n">ssh</span> <span class="o">-</span><span class="n">T</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span>
+
+</code></pre></div><h2 id="3-利用git从本地上传到github">3. 利用git从本地上传到github</h2>
+<h4 id="git常用命令-httpswwwcnblogscomlidabop6845345html">git常用命令 <a href="https://www.cnblogs.com/lidabo/p/6845345.html"target="_blank">https://www.cnblogs.com/lidabo/p/6845345.html</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 步骤：工作区--暂存区--仓库</span>
+<span class="c1"># 1、git克隆</span>
+<span class="c1"># 目的：备份；实现代码共享集中化管理</span>
+<span class="c1"># 首先用链接将仓库文件clone到本地目录下</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">仓库地址</span>
+<span class="c1"># 2、对仓库进行更改</span>
+<span class="n">git</span> <span class="n">init</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;comments&#39;</span>
+<span class="n">git</span> <span class="n">status</span>
+<span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span> <span class="o">--</span><span class="n">allow</span><span class="o">-</span><span class="n">unrelated</span><span class="o">-</span><span class="n">histories</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">master</span>
+</code></pre></div><h3 id="31-解释">3.1 解释</h3>
+<ul>
+<li>第一步： 进入所要上传文件的目录输入命令 git init</li>
+<li>第二步： 添加到暂存区， git add hello.c</li>
+<li>删除文件 git rm -r 文件夹，或者 手动删除后 git add .</li>
+<li>第三步：从暂存区添加到仓库， git commit -m ‘add hello.c’（描述）
+<ul>
+<li>查看git缓存空间状态指令：git status</li>
+</ul>
+</li>
+<li>第四步：将本地仓库文件传到github仓库：git push -u origin master</li>
+</ul>
+<h3 id="32-出现的错误及解决方案">3.2 出现的错误及解决方案</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 1. Could not resolve host: github.com</span>
+<span class="c1"># 方法：ping github.com</span>
+<span class="c1"># 发现ping不通</span>
+<span class="n">sudo</span> <span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">hosts</span>
+<span class="n">加入192</span><span class="mf">.30.255.112</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span>
+<span class="n">成功ping通</span>
+
+<span class="c1"># 2.</span>
+<span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span> <span class="o">--</span><span class="n">allow</span><span class="o">-</span><span class="n">unrelated</span><span class="o">-</span><span class="n">histories</span>
+</code></pre></div><h2 id="4-github-pages-搭建网站">4. github pages 搭建网站</h2>
+<ul>
+<li>搭建步骤</li>
+</ul>
+<ol>
+<li>创建个人站点 $ \Rightarrow $ 新建仓库（注：仓库名必须是【用户名.github.io】）<br>
+ps:以下两步如果想要借助hugo、WordPress等创建博客，则不需要操作</li>
+<li>在仓库下新建index.html <br>
+<a href="https://chuweier.github.io/"target="_blank">https://chuweier.github.io/</a><br>
+只能创建静态网页</li>
+<li>将项目变成网页点进项目$ \Rightarrow $ settings $ \Rightarrow $ change theme<br>
+<a href="https://github.com/ChuWeiEr/ChuWeiEr.github.io.git"target="_blank">https://github.com/ChuWeiEr/ChuWeiEr.github.io.git</a></li>
+</ol>
+<h2 id="5-windows下git的使用">5. windows下git的使用</h2>
+<ul>
+<li>与ubuntu大致相同</li>
+<li>学习链接： <a href="https://blog.csdn.net/qq_37838568/article/details/81053055"target="_blank">https://blog.csdn.net/qq_37838568/article/details/81053055</a></li>
+<li>https与ssh协议：https://www.jianshu.com/p/ee2578821d49</li>
+</ul>
+<h2 id="6-windows下搭建博客">6. windows下搭建博客</h2>
+<p><a href="https://blog.51cto.com/u_13933750/3229488"target="_blank">https://blog.51cto.com/u_13933750/3229488</a></p>
+<ol>
+<li>首先下载hugo</li>
+</ol>
+<p><a href="https://github.com/gohugoio/hugo/releases"target="_blank">https://github.com/gohugoio/hugo/releases</a></p>
+<p>下载完成后将路径直接添加到系统变量即可</p>
+<ol start="2">
+<li>配置git环境（如上所述）</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="mf">3.</span> <span class="n">上传博客步骤</span>
+
+<span class="c1"># 下载hugo</span>
+<span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gohugoio</span><span class="o">/</span><span class="n">hugo</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="n">v0</span><span class="mf">.63.2</span><span class="o">/</span><span class="n">hugo_0</span><span class="mf">.63.2</span><span class="n">_Linux</span><span class="o">-</span><span class="mi">64</span><span class="n">bit</span><span class="o">.</span><span class="n">deb</span>
+<span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="n">hugo_0</span><span class="mf">.63.2</span><span class="n">_Linux</span><span class="o">-</span><span class="mi">64</span><span class="n">bit</span><span class="o">.</span><span class="n">deb</span>
+<span class="c1"># linux下或者</span>
+<span class="n">snap</span> <span class="n">install</span> <span class="n">hugo</span>
+<span class="n">hugo</span> <span class="n">version</span>
+
+
+<span class="c1"># 配置主题</span>
+<span class="n">hugo</span> <span class="n">version</span>
+<span class="n">hugo</span> <span class="n">new</span> <span class="n">site</span> <span class="n">blog</span>
+<span class="n">cd</span> <span class="n">blog</span>
+<span class="c1"># 添加主题  https://themes.gohugo.io/ ，放到theme下面</span>
+<span class="n">git</span> <span class="n">log</span> <span class="c1">#查看上传历史</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="o">-</span><span class="n">v</span> <span class="c1">#查看路径</span>
+<span class="c1"># git@github.com:ChuWeiEr/ChuWeiEr.github.io.git</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">rm</span> <span class="n">origin</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">ChuWeiEr</span><span class="o">/</span><span class="n">ChuWeiEr</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">git</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ChuWeiEr</span><span class="o">/</span><span class="n">ChuWeiEr</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">git</span>
+<span class="c1">#根目录下，编辑新建的文章，添加内容并保存</span>
+<span class="n">hugo</span> <span class="n">new</span> <span class="n">posts</span><span class="o">/</span><span class="n">文章名</span><span class="o">.</span><span class="n">md</span>
+<span class="n">hugo</span> <span class="n">new</span> <span class="n">任何名字都可以</span><span class="o">/</span><span class="n">文章名</span><span class="o">.</span><span class="n">md</span>
+<span class="c1"># 在根目录下</span>
+<span class="n">hugo</span>
+<span class="n">hugo</span> <span class="n">server</span> <span class="o">--</span><span class="n">theme</span> <span class="n">notepadium</span> <span class="o">--</span><span class="n">buildDrafts</span> <span class="o">--</span><span class="n">watch</span>
+<span class="c1"># 换到public目录</span>
+<span class="n">cd</span> <span class="n">public</span>
+<span class="n">git</span> <span class="n">init</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="err">‘</span><span class="n">备注</span><span class="err">‘</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">master</span>
+<span class="c1"># 出现问题</span>
+<span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span> <span class="o">--</span><span class="n">allow</span><span class="o">-</span><span class="n">unrelated</span><span class="o">-</span><span class="n">histories</span>
+</code></pre></div><h3 id="解释">解释</h3>
+<ul>
+<li>此处直接在jupyter notebook里面写markdown，然后导出为md，导出路径直接到posts里面</li>
+<li>构建 Hugo 网站，默认将静态站点保存到 &ldquo;public&rdquo; 目录</li>
+<li>hugo (每次有修改或者上传新文件都要hugo！)</li>
+<li>本地预览网站效果<br>
+<code>hugo server --theme=notepadium --buildDrafts --watch</code><br>
+使用浏览器打开 http://localhost:1313 预览</li>
+<li>将网站文件夹转换为git库</li>
+<li>生成的 HTML 文件保存在 &ldquo;public&rdquo; 目录中</li>
+<li>public&quot;文件夹会被转换为 Git 库<br>
+<code>cd public</code></li>
+<li>初始化git仓库<br>
+<code>git init</code></li>
+<li>查看public目录下的文件，会发现多了 .git 文件。
+** 注意是在public目录中运行 **</li>
+</ul>
+<pre><code>git add .
+git commit -m ‘备注'
+</code></pre><ul>
+<li>如果出现问题<br>
+<code>git pull origin master --allow-unrelated-histories</code></li>
+<li>因为之前上传的文件可能有的不在本地<br>
+<code>git push -u origin master</code></li>
+</ul>
+<p>4、配置表情</p>
+<ul>
+<li>在config.toml里面<br>
+<code>enableEmoji = true</code></li>
+<li>输入表情的格式<br>
+<code>&lt;/span&gt; &lt;code&gt;😄&lt;/code&gt;&lt;/span&gt;</code></li>
+<li>表情符号单词的网站
+<a href="https://www.webfx.com/tools/emoji-cheat-sheet/"target="_blank">https://www.webfx.com/tools/emoji-cheat-sheet/</a></li>
+</ul>
+<p>5、网页</p>
+<ul>
+<li>网页在markdown里面要写成如下形式</li>
+<li>其实jupyter命令行直接可以实现</span> <code>😌</code></span></li>
+</ul>
+<pre><code><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">.emoji {
+font-family: Apple Color Emoji,Segoe UI Emoji,NotoColorEmoji,Segoe UI Symbol,Android Emoji,EmojiSymbols;
+}</code></pre></div>
+</code></pre><ol start="6">
+<li>无法链接到网站的解决
+<a href="https://www.cnblogs.com/GyForever1004/p/13702643.html"target="_blank">https://www.cnblogs.com/GyForever1004/p/13702643.html</a></li>
+</ol>
+<p><a href="https://blog.csdn.net/majianfei1023/article/details/107844493"target="_blank">https://blog.csdn.net/majianfei1023/article/details/107844493</a></p>
+<p><a href="https://blog.csdn.net/qq_34817440/article/details/106420689"target="_blank">https://blog.csdn.net/qq_34817440/article/details/106420689</a></p>
+<p>最简单的一种办法就是把自动转换功能关掉即可。
+输入命令 ：git config core.autocrlf false (仅对当前git仓库有效）</p></article><section class="article labels"><a class="category" href=/categories/web/>Web</a><a class="tag" href=/tags/git/>git</a><a class="tag" href=/tags/hugo/>hugo</a></section><section class="article navigation"><p><a class="link" href="/post/%E7%BC%96%E8%BE%91%E5%99%A8-01-jupyter-notebook/"><span class="li">&larr;</span>编辑器-01-jupyter notebook</a></p><p><a class="link" href="/post/brave/"><span class="li">&rarr;</span>生命在于莽撞 </a class="link">
+    </p></section></div><section id="footer" class="footer">
+    <script src="https://utteranc.es/client.js"
+        repo="ChuWeiEr/hugoblogtalks"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><div class="footer-wrap">
+    <p class="copyright">©2020 Notepadium.</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script></div>
+</body>
+
+</html>
