@@ -1,195 +1,214 @@
 <!DOCTYPE html>
 <html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.86.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>机器学习简介03&nbsp;&ndash;&nbsp;Wei Chu</title><link rel="stylesheet" href="/css/core.min.746d4f5e0f69f8ca3fdabdfef6b99d63a9852de221102d14b47177e2a4e0fb979941c84b1ae5b6a490e592140624482e.css" integrity="sha384-dG1PXg9p&#43;Mo/2r3&#43;9rmdY6mFLeIhEC0UtHF34qTg&#43;5eZQchLGuW2pJDlkhQGJEgu"><body>
+<meta name="supported-color-schemes" content="light dark"><title>机器学习入门03&nbsp;&ndash;&nbsp;Wei Chu</title><link rel="stylesheet" href="/css/core.min.746d4f5e0f69f8ca3fdabdfef6b99d63a9852de221102d14b47177e2a4e0fb979941c84b1ae5b6a490e592140624482e.css" integrity="sha384-dG1PXg9p&#43;Mo/2r3&#43;9rmdY6mFLeIhEC0UtHF34qTg&#43;5eZQchLGuW2pJDlkhQGJEgu"><body>
     <div class="base-body"><section id="header" class="site header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/logo.png" alt /><span class="site name">Wei Chu</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about/">About</a><a class="nav item" href="https://gohugo.io/"target="_blank">Hugo</a></nav></div></span></div><div class="site slogan"><span class="title">醉后不知天在水 满船清梦压星河</span></div></section><div id="content"><section class="article header">
-    <h1 class="article title">机器学习简介03</h1><p class="article date">Nov 30, 2021<span class="reading-time"> • 4 minutes to read</span></p></section><article class="article markdown-body"><p>回归和聚类</p>
-<p>线性回归
-欠拟合与过拟合
-岭回归</p>
-<p>分类算法：逻辑回归</p>
-<p>模型保存与加载</p>
-<p>无监督学习 K-means算法</p>
-<p>4.1 线性回归
-回归问题：
-目标值 - 连续型的数据
-4.1.1 线性回归的原理
-2 什么是线性回归
-函数关系 特征值和目标值
-线型模型
-线性关系
-y = w1x1 + w2x2 + w3x3 + …… + wnxn + b
-= wTx + b
-数据挖掘基础
-y = kx + b
-y = w1x1 + w2x2 + b
-y = 0.7x1 + 0.3x2
-期末成绩：0.7×考试成绩+0.3×平时成绩
-[[90, 85],
-[]]
-[[0.3],
-[0.7]]
-[8, 2] * [2, 1] = [8, 1]
-广义线性模型
-非线性关系？
-线性模型
-自变量一次
-y = w1x1 + w2x2 + w3x3 + …… + wnxn + b
-参数一次
-y = w1x1 + w2x1^2 + w3x1^3 + w4x2^3 + …… + b
-线性关系&amp;线性模型
-线性关系一定是线性模型
-线性模型不一定是线性关系
-4.1.2 线性回归的损失和优化原理（理解记忆）
-目标：求模型参数
-模型参数能够使得预测准确
-真实关系：真实房子价格 = 0.02×中心区域的距离 + 0.04×城市一氧化氮浓度 + (-0.12×自住房平均房价) + 0.254×城镇犯罪率
-随意假定：预测房子价格 = 0.25×中心区域的距离 + 0.14×城市一氧化氮浓度 + 0.42×自住房平均房价 + 0.34×城镇犯罪率
-损失函数/cost/成本函数/目标函数：
-最小二乘法
-优化损失
-优化方法？
-正规方程
-天才 - 直接求解W
-拓展：
-1)
-y = ax^2 + bx + c
-y' = 2ax + b = 0
-x = - b / 2a
-2)
-a * b = 1
-b = 1 / a = a ^ -1
-A * B = E
-[[1, 0, 0],
-[0, 1, 0],
-[0, 0, 1]]
-B = A ^ -1</p>
-<pre><code>            梯度下降
-                勤奋努力的普通人
-                    试错、改进
-        4.1.4 波士顿房价预测
-            流程：
-                1）获取数据集
-                2）划分数据集
-                3）特征工程：
-                    无量纲化 - 标准化
-                4）预估器流程
-                    fit() --&gt; 模型
-                    coef_ intercept_
-                5）模型评估
-        回归的性能评估：
-            均方误差
-        4 正规方程和梯度下降对比
-</code></pre>
-<p>4.2 欠拟合与过拟合
-训练集上表现得好，测试集上不好 - 过拟合
-4.2.1 什么是过拟合与欠拟合
-欠拟合
-学习到数据的特征过少
-解决：
-增加数据的特征数量
-过拟合
-原始特征过多，存在一些嘈杂特征， 模型过于复杂是因为模型尝试去兼顾各个测试数据点
-解决：
-正则化
-L1
-损失函数 + λ惩罚项
-LASSO
-L2 更常用
-损失函数 + λ惩罚项
-Ridge - 岭回归
-4.3 线性回归的改进-岭回归
-4.3.1 带有L2正则化的线性回归-岭回归
-alpha 正则化力度=惩罚项系数
-4.4 分类算法-逻辑回归与二分类
-4.4.1 逻辑回归的应用场景
-广告点击率 是否会被点击
-是否为垃圾邮件
-是否患病
-是否为金融诈骗
-是否为虚假账号
-正例 / 反例
-4.4.2 逻辑回归的原理
-线型回归的输出 就是 逻辑回归 的 输入
-激活函数
-sigmoid函数 [0, 1]
-1/(1 + e^(-x))
-假设函数/线性模型
-1/(1 + e^(-(w1x1 + w2x2 + w3x3 + …… + wnxn + b)))
-损失函数
-(y_predict - y_true)平方和/总数
-逻辑回归的真实值/预测值 是否属于某个类别
-对数似然损失
-log 2 x
-优化损失
-梯度下降
-4.4.4 案例：癌症分类预测-良／恶性乳腺癌肿瘤预测
-恶性 - 正例
-流程分析：
-1）获取数据
-读取的时候加上names
-2）数据处理
-处理缺失值
-3）数据集划分
-4）特征工程：
-无量纲化处理-标准化
-5）逻辑回归预估器
-6）模型评估
-真的患癌症的，能够被检查出来的概率 - 召回率
-4.4.5 分类的评估方法
-1 精确率与召回率
-1 混淆矩阵
-TP = True Possitive
-FN = False Negative
-2 精确率(Precision)与召回率(Recall)
-精确率
-召回率 查得全不全
-工厂 质量检测 次品 召回率
-3 F1-score 模型的稳健型
-总共有100个人，如果99个样本癌症，1个样本非癌症 - 样本不均衡
-不管怎样我全都预测正例(默认癌症为正例) - 不负责任的模型
-准确率：99%
-召回率：99/99 = 100%
-精确率：99%
-F1-score: 2*99%/ 199% = 99.497%
-AUC:0.5
-TPR = 100%
-FPR = 1 / 1 = 100%
-2 ROC曲线与AUC指标
-1 知道TPR与FPR
-TPR = TP / (TP + FN) - 召回率
-所有真实类别为1的样本中，预测类别为1的比例
-FPR = FP / (FP + TN)
-所有真实类别为0的样本中，预测类别为1的比例
-4.5 模型保存和加载
-4.6 无监督学习-K-means算法
-4.6.1 什么是无监督学习
-没有目标值 - 无监督学习
-4.6.2 无监督学习包含算法
-聚类
-K-means(K均值聚类)
-降维
-PCA
-4.6.3 K-means原理
-4.6.5 案例：k-means对Instacart Market用户聚类
-k = 3
-流程分析：
-降维之后的数据
-1）预估器流程
-2）看结果
-3）模型评估
-4.6.6 Kmeans性能评估指标
-轮廓系数
-如果b_i&raquo;a_i:趋近于1效果越好，
-b_i&laquo;a_i:趋近于-1，效果不好。
-轮廓系数的值是介于 [-1,1] ，
-越趋近于1代表内聚度和分离度都相对较优。
-4.6.7 K-means总结
-应用场景：
-没有目标值
-分类</p></article><section class="article labels"><a class="category" href=/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/>机器学习</a><a class="tag" href=/tags/%E5%9B%9E%E5%BD%92%E5%92%8C%E8%81%9A%E7%B1%BB/>回归和聚类</a></section><section class="article navigation"><p><a class="link" href="/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A802/"><span class="li">&larr;</span>机器学习简介02</a></p><p><a class="link" href="/post/linux-linux-%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F/"><span class="li">&rarr;</span>Linux基础-Linux 终端命令格式</a class="link">
+    <h1 class="article title">机器学习入门03</h1><p class="article date">Nov 30, 2021<span class="reading-time"> • 4 minutes to read</span></p></section><article class="article markdown-body"><p>来源：<a href="https://www.bilibili.com/video/BV1nt411r7tj?p=1"target="_blank">https://www.bilibili.com/video/BV1nt411r7tj?p=1</a></p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://github.com/ChuWeiEr/Luminary/raw/master/StudyPicture/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A803.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">机器学习day03</div>
+</center>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">回归和聚类</span>
+
+<span class="n">线性回归</span>
+<span class="n">欠拟合与过拟合</span>
+<span class="n">岭回归</span>
+
+<span class="n">分类算法</span><span class="err">：</span><span class="n">逻辑回归</span>
+
+<span class="n">模型保存与加载</span>
+
+<span class="n">无监督学习</span> <span class="n">K</span><span class="o">-</span><span class="n">means算法</span>
+
+
+<span class="mf">4.1</span> <span class="n">线性回归</span>
+    <span class="n">回归问题</span><span class="err">：</span>
+        <span class="n">目标值</span> <span class="o">-</span> <span class="n">连续型的数据</span>
+    <span class="mf">4.1.1</span> <span class="n">线性回归的原理</span>
+        <span class="mi">2</span> <span class="n">什么是线性回归</span>
+            <span class="n">函数关系</span> <span class="n">特征值和目标值</span>
+            <span class="n">线型模型</span>
+                <span class="n">线性关系</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">w1x1</span> <span class="o">+</span> <span class="n">w2x2</span> <span class="o">+</span> <span class="n">w3x3</span> <span class="o">+</span> <span class="err">……</span> <span class="o">+</span> <span class="n">wnxn</span> <span class="o">+</span> <span class="n">b</span>
+              <span class="o">=</span> <span class="n">wTx</span> <span class="o">+</span> <span class="n">b</span>
+            <span class="n">数据挖掘基础</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">kx</span> <span class="o">+</span> <span class="n">b</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">w1x1</span> <span class="o">+</span> <span class="n">w2x2</span> <span class="o">+</span> <span class="n">b</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="mf">0.7</span><span class="n">x1</span> <span class="o">+</span> <span class="mf">0.3</span><span class="n">x2</span>
+            <span class="n">期末成绩</span><span class="err">：</span><span class="mf">0.7</span><span class="err">×</span><span class="n">考试成绩</span><span class="o">+</span><span class="mf">0.3</span><span class="err">×</span><span class="n">平时成绩</span>
+            <span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">85</span><span class="p">],</span>
+            <span class="p">[]]</span>
+            <span class="p">[[</span><span class="mf">0.3</span><span class="p">],</span>
+            <span class="p">[</span><span class="mf">0.7</span><span class="p">]]</span>
+            <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">广义线性模型</span>
+                <span class="n">非线性关系</span><span class="err">？</span>
+                <span class="n">线性模型</span>
+                    <span class="n">自变量一次</span>
+                     <span class="n">y</span> <span class="o">=</span> <span class="n">w1x1</span> <span class="o">+</span> <span class="n">w2x2</span> <span class="o">+</span> <span class="n">w3x3</span> <span class="o">+</span> <span class="err">……</span> <span class="o">+</span> <span class="n">wnxn</span> <span class="o">+</span> <span class="n">b</span>
+                    <span class="n">参数一次</span>
+                     <span class="n">y</span> <span class="o">=</span> <span class="n">w1x1</span> <span class="o">+</span> <span class="n">w2x1</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">w3x1</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="n">w4x2</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="err">……</span> <span class="o">+</span> <span class="n">b</span>
+                <span class="n">线性关系</span><span class="o">&amp;</span><span class="n">线性模型</span>
+                <span class="n">线性关系一定是线性模型</span>
+                <span class="n">线性模型不一定是线性关系</span>
+         <span class="mf">4.1.2</span> <span class="n">线性回归的损失和优化原理</span><span class="err">（</span><span class="n">理解记忆</span><span class="err">）</span>
+            <span class="n">目标</span><span class="err">：</span><span class="n">求模型参数</span>
+                <span class="n">模型参数能够使得预测准确</span>
+            <span class="n">真实关系</span><span class="err">：</span><span class="n">真实房子价格</span> <span class="o">=</span> <span class="mf">0.02</span><span class="err">×</span><span class="n">中心区域的距离</span> <span class="o">+</span> <span class="mf">0.04</span><span class="err">×</span><span class="n">城市一氧化氮浓度</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.12</span><span class="err">×</span><span class="n">自住房平均房价</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.254</span><span class="err">×</span><span class="n">城镇犯罪率</span>
+            <span class="n">随意假定</span><span class="err">：</span><span class="n">预测房子价格</span> <span class="o">=</span> <span class="mf">0.25</span><span class="err">×</span><span class="n">中心区域的距离</span> <span class="o">+</span> <span class="mf">0.14</span><span class="err">×</span><span class="n">城市一氧化氮浓度</span> <span class="o">+</span> <span class="mf">0.42</span><span class="err">×</span><span class="n">自住房平均房价</span> <span class="o">+</span> <span class="mf">0.34</span><span class="err">×</span><span class="n">城镇犯罪率</span>
+            <span class="n">损失函数</span><span class="o">/</span><span class="n">cost</span><span class="o">/</span><span class="n">成本函数</span><span class="o">/</span><span class="n">目标函数</span><span class="err">：</span>
+                <span class="n">最小二乘法</span>
+            <span class="n">优化损失</span>
+                <span class="n">优化方法</span><span class="err">？</span>
+                <span class="n">正规方程</span>
+                    <span class="n">天才</span> <span class="o">-</span> <span class="n">直接求解W</span>
+                    <span class="n">拓展</span><span class="err">：</span>
+                    <span class="mi">1</span><span class="p">)</span>
+                        <span class="n">y</span> <span class="o">=</span> <span class="n">ax</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">bx</span> <span class="o">+</span> <span class="n">c</span>
+                        <span class="n">y</span><span class="s1">&#39; = 2ax + b = 0</span>
+                        <span class="n">x</span> <span class="o">=</span> <span class="o">-</span> <span class="n">b</span> <span class="o">/</span> <span class="mi">2</span><span class="n">a</span>
+                    <span class="mi">2</span><span class="p">)</span>
+                        <span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+                            <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">^</span> <span class="o">-</span><span class="mi">1</span>
+                        <span class="n">A</span> <span class="o">*</span> <span class="n">B</span> <span class="o">=</span> <span class="n">E</span>
+                        <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+                        <span class="n">B</span> <span class="o">=</span> <span class="n">A</span> <span class="o">^</span> <span class="o">-</span><span class="mi">1</span>
+
+                <span class="n">梯度下降</span>
+                    <span class="n">勤奋努力的普通人</span>
+                        <span class="n">试错</span><span class="err">、</span><span class="n">改进</span>
+            <span class="mf">4.1.4</span> <span class="n">波士顿房价预测</span>
+                <span class="n">流程</span><span class="err">：</span>
+                    <span class="mi">1</span><span class="err">）</span><span class="n">获取数据集</span>
+                    <span class="mi">2</span><span class="err">）</span><span class="n">划分数据集</span>
+                    <span class="mi">3</span><span class="err">）</span><span class="n">特征工程</span><span class="err">：</span>
+                        <span class="n">无量纲化</span> <span class="o">-</span> <span class="n">标准化</span>
+                    <span class="mi">4</span><span class="err">）</span><span class="n">预估器流程</span>
+                        <span class="n">fit</span><span class="p">()</span> <span class="o">--&gt;</span> <span class="n">模型</span>
+                        <span class="n">coef_</span> <span class="n">intercept_</span>
+                    <span class="mi">5</span><span class="err">）</span><span class="n">模型评估</span>
+            <span class="n">回归的性能评估</span><span class="err">：</span>
+                <span class="n">均方误差</span>
+            <span class="mi">4</span> <span class="n">正规方程和梯度下降对比</span>
+<span class="mf">4.2</span> <span class="n">欠拟合与过拟合</span>
+    <span class="n">训练集上表现得好</span><span class="err">，</span><span class="n">测试集上不好</span> <span class="o">-</span> <span class="n">过拟合</span>
+    <span class="mf">4.2.1</span> <span class="n">什么是过拟合与欠拟合</span>
+        <span class="n">欠拟合</span>
+            <span class="n">学习到数据的特征过少</span>
+            <span class="n">解决</span><span class="err">：</span>
+                <span class="n">增加数据的特征数量</span>
+        <span class="n">过拟合</span>
+            <span class="n">原始特征过多</span><span class="err">，</span><span class="n">存在一些嘈杂特征</span><span class="err">，</span> <span class="n">模型过于复杂是因为模型尝试去兼顾各个测试数据点</span>
+            <span class="n">解决</span><span class="err">：</span>
+                <span class="n">正则化</span>
+                    <span class="n">L1</span>
+                    <span class="n">损失函数</span> <span class="o">+</span> <span class="n">λ惩罚项</span>
+                    <span class="n">LASSO</span>
+                    <span class="n">L2</span> <span class="n">更常用</span>
+                    <span class="n">损失函数</span> <span class="o">+</span> <span class="n">λ惩罚项</span>
+                    <span class="n">Ridge</span> <span class="o">-</span> <span class="n">岭回归</span>
+<span class="mf">4.3</span> <span class="n">线性回归的改进</span><span class="o">-</span><span class="n">岭回归</span>
+    <span class="mf">4.3.1</span> <span class="n">带有L2正则化的线性回归</span><span class="o">-</span><span class="n">岭回归</span>
+        <span class="n">alpha</span> <span class="n">正则化力度</span><span class="o">=</span><span class="n">惩罚项系数</span>
+<span class="mf">4.4</span> <span class="n">分类算法</span><span class="o">-</span><span class="n">逻辑回归与二分类</span>
+    <span class="mf">4.4.1</span> <span class="n">逻辑回归的应用场景</span>
+        <span class="n">广告点击率</span> <span class="n">是否会被点击</span>
+        <span class="n">是否为垃圾邮件</span>
+        <span class="n">是否患病</span>
+        <span class="n">是否为金融诈骗</span>
+        <span class="n">是否为虚假账号</span>
+        <span class="n">正例</span> <span class="o">/</span> <span class="n">反例</span>
+    <span class="mf">4.4.2</span> <span class="n">逻辑回归的原理</span>
+        <span class="n">线型回归的输出</span> <span class="n">就是</span> <span class="n">逻辑回归</span> <span class="n">的</span> <span class="n">输入</span>
+        <span class="n">激活函数</span>
+            <span class="n">sigmoid函数</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">假设函数</span><span class="o">/</span><span class="n">线性模型</span>
+            <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">e</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">w1x1</span> <span class="o">+</span> <span class="n">w2x2</span> <span class="o">+</span> <span class="n">w3x3</span> <span class="o">+</span> <span class="err">……</span> <span class="o">+</span> <span class="n">wnxn</span> <span class="o">+</span> <span class="n">b</span><span class="p">)))</span>
+        <span class="n">损失函数</span>
+            <span class="p">(</span><span class="n">y_predict</span> <span class="o">-</span> <span class="n">y_true</span><span class="p">)</span><span class="n">平方和</span><span class="o">/</span><span class="n">总数</span>
+            <span class="n">逻辑回归的真实值</span><span class="o">/</span><span class="n">预测值</span> <span class="n">是否属于某个类别</span>
+            <span class="n">对数似然损失</span>
+            <span class="n">log</span> <span class="mi">2</span> <span class="n">x</span>
+        <span class="n">优化损失</span>
+            <span class="n">梯度下降</span>
+    <span class="mf">4.4.4</span> <span class="n">案例</span><span class="err">：</span><span class="n">癌症分类预测</span><span class="o">-</span><span class="n">良</span><span class="err">／</span><span class="n">恶性乳腺癌肿瘤预测</span>
+        <span class="n">恶性</span> <span class="o">-</span> <span class="n">正例</span>
+        <span class="n">流程分析</span><span class="err">：</span>
+            <span class="mi">1</span><span class="err">）</span><span class="n">获取数据</span>
+                <span class="n">读取的时候加上names</span>
+            <span class="mi">2</span><span class="err">）</span><span class="n">数据处理</span>
+                <span class="n">处理缺失值</span>
+            <span class="mi">3</span><span class="err">）</span><span class="n">数据集划分</span>
+            <span class="mi">4</span><span class="err">）</span><span class="n">特征工程</span><span class="err">：</span>
+                <span class="n">无量纲化处理</span><span class="o">-</span><span class="n">标准化</span>
+            <span class="mi">5</span><span class="err">）</span><span class="n">逻辑回归预估器</span>
+            <span class="mi">6</span><span class="err">）</span><span class="n">模型评估</span>
+    <span class="n">真的患癌症的</span><span class="err">，</span><span class="n">能够被检查出来的概率</span> <span class="o">-</span> <span class="n">召回率</span>
+    <span class="mf">4.4.5</span> <span class="n">分类的评估方法</span>
+        <span class="mi">1</span> <span class="n">精确率与召回率</span>
+            <span class="mi">1</span> <span class="n">混淆矩阵</span>
+                <span class="n">TP</span> <span class="o">=</span> <span class="kc">True</span> <span class="n">Possitive</span>
+                <span class="n">FN</span> <span class="o">=</span> <span class="kc">False</span> <span class="n">Negative</span>
+            <span class="mi">2</span> <span class="n">精确率</span><span class="p">(</span><span class="n">Precision</span><span class="p">)</span><span class="n">与召回率</span><span class="p">(</span><span class="n">Recall</span><span class="p">)</span>
+                <span class="n">精确率</span>
+                <span class="n">召回率</span> <span class="n">查得全不全</span>
+                <span class="n">工厂</span> <span class="n">质量检测</span> <span class="n">次品</span> <span class="n">召回率</span>
+            <span class="mi">3</span> <span class="n">F1</span><span class="o">-</span><span class="n">score</span> <span class="n">模型的稳健型</span>
+       <span class="n">总共有100个人</span><span class="err">，</span><span class="n">如果99个样本癌症</span><span class="err">，</span><span class="mi">1</span><span class="n">个样本非癌症</span> <span class="o">-</span> <span class="n">样本不均衡</span>
+       <span class="n">不管怎样我全都预测正例</span><span class="p">(</span><span class="n">默认癌症为正例</span><span class="p">)</span> <span class="o">-</span> <span class="n">不负责任的模型</span>
+           <span class="n">准确率</span><span class="err">：</span><span class="mi">99</span><span class="o">%</span>
+           <span class="n">召回率</span><span class="err">：</span><span class="mi">99</span><span class="o">/</span><span class="mi">99</span> <span class="o">=</span> <span class="mi">100</span><span class="o">%</span>
+           <span class="n">精确率</span><span class="err">：</span><span class="mi">99</span><span class="o">%</span>
+           <span class="n">F1</span><span class="o">-</span><span class="n">score</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="mi">99</span><span class="o">%/</span> <span class="mi">199</span><span class="o">%</span> <span class="o">=</span> <span class="mf">99.497</span><span class="o">%</span>
+           <span class="n">AUC</span><span class="p">:</span><span class="mf">0.5</span>
+                <span class="n">TPR</span> <span class="o">=</span> <span class="mi">100</span><span class="o">%</span>
+                <span class="n">FPR</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">100</span><span class="o">%</span>
+       <span class="mi">2</span> <span class="n">ROC曲线与AUC指标</span>
+            <span class="mi">1</span> <span class="n">知道TPR与FPR</span>
+                <span class="n">TPR</span> <span class="o">=</span> <span class="n">TP</span> <span class="o">/</span> <span class="p">(</span><span class="n">TP</span> <span class="o">+</span> <span class="n">FN</span><span class="p">)</span> <span class="o">-</span> <span class="n">召回率</span>
+                    <span class="n">所有真实类别为1的样本中</span><span class="err">，</span><span class="n">预测类别为1的比例</span>
+                <span class="n">FPR</span> <span class="o">=</span> <span class="n">FP</span> <span class="o">/</span> <span class="p">(</span><span class="n">FP</span> <span class="o">+</span> <span class="n">TN</span><span class="p">)</span>
+                    <span class="n">所有真实类别为0的样本中</span><span class="err">，</span><span class="n">预测类别为1的比例</span>
+<span class="mf">4.5</span> <span class="n">模型保存和加载</span>
+<span class="mf">4.6</span> <span class="n">无监督学习</span><span class="o">-</span><span class="n">K</span><span class="o">-</span><span class="n">means算法</span>
+    <span class="mf">4.6.1</span> <span class="n">什么是无监督学习</span>
+        <span class="n">没有目标值</span> <span class="o">-</span> <span class="n">无监督学习</span>
+    <span class="mf">4.6.2</span> <span class="n">无监督学习包含算法</span>
+        <span class="n">聚类</span>
+        <span class="n">K</span><span class="o">-</span><span class="n">means</span><span class="p">(</span><span class="n">K均值聚类</span><span class="p">)</span>
+        <span class="n">降维</span>
+        <span class="n">PCA</span>
+    <span class="mf">4.6.3</span> <span class="n">K</span><span class="o">-</span><span class="n">means原理</span>
+    <span class="mf">4.6.5</span> <span class="n">案例</span><span class="err">：</span><span class="n">k</span><span class="o">-</span><span class="n">means对Instacart</span> <span class="n">Market用户聚类</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="n">流程分析</span><span class="err">：</span>
+        <span class="n">降维之后的数据</span>
+        <span class="mi">1</span><span class="err">）</span><span class="n">预估器流程</span>
+        <span class="mi">2</span><span class="err">）</span><span class="n">看结果</span>
+        <span class="mi">3</span><span class="err">）</span><span class="n">模型评估</span>
+    <span class="mf">4.6.6</span> <span class="n">Kmeans性能评估指标</span>
+        <span class="n">轮廓系数</span>
+        <span class="n">如果b_i</span><span class="o">&gt;&gt;</span><span class="n">a_i</span><span class="p">:</span><span class="n">趋近于1效果越好</span><span class="err">，</span>
+        <span class="n">b_i</span><span class="o">&lt;&lt;</span><span class="n">a_i</span><span class="p">:</span><span class="n">趋近于</span><span class="o">-</span><span class="mi">1</span><span class="err">，</span><span class="n">效果不好</span><span class="err">。</span>
+        <span class="n">轮廓系数的值是介于</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="err">，</span>
+        <span class="n">越趋近于1代表内聚度和分离度都相对较优</span><span class="err">。</span>
+    <span class="mf">4.6.7</span> <span class="n">K</span><span class="o">-</span><span class="n">means总结</span>
+        <span class="n">应用场景</span><span class="err">：</span>
+            <span class="n">没有目标值</span>
+            <span class="n">分类</span>
+
+</code></pre></div></article><section class="article labels"><a class="category" href=/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/>机器学习</a><a class="tag" href=/tags/%E5%9B%9E%E5%BD%92%E5%92%8C%E8%81%9A%E7%B1%BB/>回归和聚类</a></section><section class="article navigation"><p><a class="link" href="/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A802/"><span class="li">&larr;</span>机器学习入门02</a></p><p><a class="link" href="/post/linux-linux-%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F/"><span class="li">&rarr;</span>Linux基础-Linux 终端命令格式</a class="link">
     </p></section></div><section id="footer" class="footer">
     <script src="https://utteranc.es/client.js"
         repo="ChuWeiEr/hugoblogtalks"
